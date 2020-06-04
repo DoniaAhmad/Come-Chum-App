@@ -1,0 +1,36 @@
+<ion-content>
+  <h1 class="title">{{"register.title" | translate}}</h1>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">{{'common.name' | translate}}</ion-label>
+      <ion-input class="input" type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">{{'common.email' | translate}}</ion-label>
+      <ion-input class="input" type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">{{'common.password' | translate}}</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">{{'common.confirm_password' | translate}}</ion-label>
+      <ion-input type="password" [(ngModel)]="confirm_password"></ion-input>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2>
+          <select class="countries">
+            <option>US +1</option>
+            <option>EG +20</option>
+          </select>
+        </ion-col>
+        <ion-col col-10>
+          <ion-input class="phone" type="text" [(ngModel)]="phone" placeholder="{{'common.phone' | translate}}"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+  <p class="note">{{"register.subtitle" | translate}}</p>
+  <ion-button>{{"common.create" | translate}}</ion-button>
+</ion-content>

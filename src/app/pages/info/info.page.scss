@@ -1,0 +1,30 @@
+.splash{
+    height: 50em;
+    --background: linear-gradient(180deg, #7e49b5 0%, #c7338d 100%) ;
+}
+
+ion-slides{
+    overflow: visible;
+}
+
+ion-slide{
+    img{
+        width: 50%;
+        margin: auto;
+        margin-top: 10em;
+    }
+    h1,p{
+        margin: auto;
+        margin-top: 1em;
+    }
+}
+
+.continue-btn{
+    background: transparent;
+    color: #fff;
+    margin: auto;
+    padding: 1em;
+    border-radius: 25px;
+    margin-top: 3em;
+    border: 2px solid #fff;
+}

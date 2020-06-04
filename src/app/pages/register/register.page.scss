@@ -1,0 +1,36 @@
+.title{
+    margin: 1em;
+}
+
+ion-list{
+    padding: 1em;
+}
+
+.countries{
+    border: none;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 0.5em;
+}
+
+.phone{
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.note{
+    margin: 2em;
+    margin-top: 0em;
+}
+
+ion-button{
+    --background: linear-gradient(
+    to right,
+    var(--ion-color-primary) 0%,
+    var(--ion-color-secondary) 100%
+  );
+  width: 70%;
+  position: absolute;
+  bottom: 2em;
+  margin: auto;
+  left: 0px;
+  right: 0px;
+}

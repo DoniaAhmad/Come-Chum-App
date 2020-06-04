@@ -1,0 +1,54 @@
+.title{
+    margin: 1em;
+}
+
+ion-list{
+    padding: 1em;
+}
+
+.forgot{
+    text-align: right;
+    margin: 1em;
+}
+
+.create{
+    text-align: center;
+    margin: 1em;
+}
+
+ion-button{
+    --background: linear-gradient(
+    to right,
+    var(--ion-color-primary) 0%,
+    var(--ion-color-secondary) 100%
+  );
+  display: block;
+  width: 70%;
+  margin: auto;
+  margin-top: 2em;
+}
+
+.or{
+    text-align: center;
+    span{
+        color: var(--ion-color-primary);
+    }
+}
+
+hr{
+    background-color: #dcdcdc;
+}
+
+.loginBackground{
+    position: absolute;
+    bottom: 0px;
+}
+
+.social{
+    display: block;
+    text-align: center;
+    ion-icon{
+        margin: 1em;
+        color: var(--ion-color-primary);
+    }
+}

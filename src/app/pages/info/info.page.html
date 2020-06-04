@@ -1,0 +1,46 @@
+<ion-content class="splash">
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <img src="../../../assets/imgs/info1.png"/>
+        </ion-row>
+        <ion-row>
+          <h1>{{"info.slide1_title" | translate}}</h1>
+        </ion-row>
+        <ion-row>
+          <p>{{"info.slide1_subtitle" | translate}}</p>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <img src="../../../assets/imgs/info2.png"/>
+        </ion-row>
+        <ion-row>
+          <h1>{{"info.slide2_title" | translate}}</h1>
+        </ion-row>
+        <ion-row>
+          <p>{{"info.slide2_subtitle" | translate}}</p>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <img src="../../../assets/imgs/info3.png"/>
+        </ion-row>
+        <ion-row>
+          <h1>{{"info.slide3_title" | translate}}</h1>
+        </ion-row>
+        <ion-row>
+          <p>{{"info.slide3_subtitle" | translate}}</p>
+        </ion-row>
+        <ion-row>
+          <button class="continue-btn" (click)="continue()">{{"common.continue" | translate}}</button>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

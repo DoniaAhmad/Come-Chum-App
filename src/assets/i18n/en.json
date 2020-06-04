@@ -1,0 +1,40 @@
+{
+    "common" : {
+        "loading" : "Loading",
+        "email" : "Email",
+        "password" : "Password",
+        "or" : "OR",
+        "name" : "Name",
+        "confirm_password" : "Confirm Password",
+        "phone" : "Phone",
+        "create" : "Create",
+        "continue" : "Continue",
+        "enter_required_data" : "Enter all required data"
+    },
+    "info" : {
+        "slide1_title" : "Search for the right place",
+        "slide1_subtitle" : "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+        "slide2_title" : "Contact with owner",
+        "slide2_subtitle" : "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+        "slide3_title" : "Enjoy your journey",
+        "slide3_subtitle" : "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
+    },
+    "login" : {
+        "title" : "Login",
+        "forgot" : "Forgot ?",
+        "create_new_account" : "Create new account"
+    },
+    "register" : {
+        "title" : "Sign up",
+        "subtitle" : "By tapping on 'Create', you agree to the terms of use and Privacy Policy"
+    },
+    "forgot" : {
+        "title" : "Forgot Password",
+        "subtitle" : "Enter the email address that you use to signup your account"
+    },
+    "activate" : {
+        "title" : "Activate",
+        "subtitle" : "Check your email .. We have sent you an activation email",
+        "send_again" : "Send Again"
+    }
+}

@@ -1,0 +1,37 @@
+<ion-content>
+  <h1 class="title">{{"login.title" | translate}}</h1>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">{{'common.email' | translate}}</ion-label>
+      <ion-input class="input" type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">{{'common.password' | translate}}</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </ion-list>
+  <p class="forgot" (click)="forgot()">{{"login.forgot" | translate}}</p>
+  <ion-button>{{"login.title" | translate}}</ion-button>
+  <p class="create" (click)="register()">{{"login.create_new_account" | translate}}</p>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-1></ion-col>
+      <ion-col col-3>
+        <hr>
+      </ion-col>
+      <ion-col col-3 class="or">
+        <span> {{"common.or" | translate}} </span>
+      </ion-col>
+      <ion-col col-3>
+        <hr>
+      </ion-col>
+      <ion-col col-1></ion-col>
+    </ion-row>
+    <ion-row class="social">
+      <ion-icon name="logo-facebook"></ion-icon>
+      <ion-icon name="logo-twitter"></ion-icon>
+      <ion-icon name="logo-google"></ion-icon>
+    </ion-row>
+  </ion-grid>
+  <img class="loginBackground" src="../../../assets/imgs/login.png"/>
+</ion-content>
