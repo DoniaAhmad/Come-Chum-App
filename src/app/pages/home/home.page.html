@@ -1,20 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+    <div slot="fixed" class="container-fixed">
+        <ion-grid>
+            <ion-row>
+                <ion-col size="3">
+                    <img  class="logo" src="../../../assets/imgs/logo_home.png" />
+                </ion-col>
+                <ion-col size="7"></ion-col>
+                <ion-col size="2">
+                    <img  class="menu" src="../../../assets/imgs/menu.png" />
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <ion-grid>
+        <ion-row>
+            <!-- search bar -->
+            <ion-searchbar class="search" placeholder="Search here .." showCancelButton="focus">
+                <img class="advanced" src="../../../assets/imgs/advanced.png" />
+            </ion-searchbar>
+            <!-- end search bar -->
+        </ion-row>
+        <ion-row>
+            <!-- trending blogs -->
+            <ion-col size="6">
+                <p>Trending Blogs</p>
+            </ion-col>
+            <ion-col size="6">
+                <p class="see-all">See all</p>
+            </ion-col>
+            <ion-slides [options]="slideOpts">
+                <ion-slide *ngFor="let blog of trendingBlogs">
+                    <app-blog></app-blog>
+                </ion-slide>
+            </ion-slides>
+            <!-- end trending blogs -->
+        </ion-row>
+    </ion-grid>
 </ion-content>

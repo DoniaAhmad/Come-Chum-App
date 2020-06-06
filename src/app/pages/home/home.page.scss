@@ -1,27 +1,30 @@
-#container {
-  text-align: center;
+ion-content{
+  --padding-top: 2em;
+  --padding-start: 0.5em;
+  --padding-end: 0.5em;
+}
 
+.container-fixed{
+  margin: 0.5em;
+}
+
+.menu{
+  width: 35%;
+  float: right;
+}
+
+.search{
+  --border-radius: 5px;
+  margin-top: 1em;
+}
+
+.advanced{
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  width: 1em;
+  z-index: 999;
+  right: 1em;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+.see-all{
+  text-align: right;
 }
