@@ -1,0 +1,31 @@
+.post-text{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.post-profile-picture{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+.post-user-name{
+    margin: 0px;
+    color: black;
+}
+
+.post-time{
+    font-size: 0.7em;
+}
+
+.post-image{
+    border-radius: 25px;
+    box-shadow: 10px 17px 37px #00000059;
+}
+
+.post-numbers{
+    position: absolute;
+    top: 45%;
+    transform: translate(0, -50%);
+    margin-left: 0.5em;
+}

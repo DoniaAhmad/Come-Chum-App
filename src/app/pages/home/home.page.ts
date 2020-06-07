@@ -13,7 +13,10 @@ export class HomePage {
   }, {
   }, {
   }];
-  public feed;
+  public feed = [{
+  }, {
+  }, {
+  }];
   public searchQuery = '';
 
   private pageId = 1;
@@ -35,7 +38,7 @@ export class HomePage {
 
   getFeed() {
     this.feedService.getFeed(1, this.pageId).subscribe( data => {
-      this.feed = data;
+      this.feed = (data as Array<any>);
       this.pageId++;
     });
   }
@@ -43,7 +46,7 @@ export class HomePage {
   search() {
     this.pageId = 1;
     this.feedService.search(1, this.pageId, this.searchQuery).subscribe( data => {
-      this.feed = data;
+      this.feed = (data as Array<any>);
       this.pageId++;
     });
   }

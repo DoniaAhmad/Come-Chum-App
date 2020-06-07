@@ -35,5 +35,12 @@
             </ion-slides>
             <!-- end trending blogs -->
         </ion-row>
+        <ion-row>
+            <ion-list lines="none">
+                <ion-item *ngFor="let post of feed">
+                    <app-post></app-post>
+                </ion-item>
+            </ion-list>
+        </ion-row>
     </ion-grid>
 </ion-content>
