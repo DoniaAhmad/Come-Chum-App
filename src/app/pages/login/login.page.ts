@@ -15,21 +15,22 @@ export class LoginPage implements OnInit {
   public password = '';
 
   constructor(
-    private userService : UserService,
+    private userService: UserService,
     private translate: TranslateService,
-    private router : Router) { }
+    private router: Router) { }
 
   ngOnInit() {
   }
 
   login() {
-    if(this.email != "" && this.password != "") {
-      this.userService.login(this.email, this.password).subscribe( data => {
-        console.log(data);
-      });
-    } else {
-      alert(this.translate.get("common.enter_required_data"));
-    }
+    this.router.navigate(['/tabs']);
+    // if (this.email !== '' && this.password !== '') {
+    //   this.userService.login(this.email, this.password).subscribe( data => {
+    //     console.log(data);
+    //   });
+    // } else {
+    //   alert(this.translate.get('common.enter_required_data'));
+    // }
   }
 
   forgot() {

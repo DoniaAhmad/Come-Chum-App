@@ -4,7 +4,6 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -13,6 +12,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { UserService } from './services/user.service';
 import { BlogsService } from './services/blogs.service';
 import { FeedService } from './services/feed.service';
+import { CommonModule } from '@angular/common';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -27,6 +27,7 @@ export function createTranslateLoader(http: HttpClient) {
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    CommonModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

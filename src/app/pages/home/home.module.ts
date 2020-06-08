@@ -4,17 +4,21 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
-import { BlogComponent } from 'src/app/components/blog/blog.component';
-import { PostComponent } from 'src/app/components/post/post.component';
-
+import { TranslateModule } from '@ngx-translate/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [
+    TranslateModule,
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    BrowserModule,
   ],
-  declarations: [HomePage, BlogComponent, PostComponent]
+  declarations: [HomePage],
+  exports: [
+    HomePage
+  ]
 })
 export class HomePageModule {}

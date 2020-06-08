@@ -2,11 +2,13 @@ ion-content{
   --padding-top: 2em;
   --padding-start: 0.5em;
   --padding-end: 0.5em;
+  --background: linear-gradient( to bottom, #fff 0%, #edf0f6 100% );
 }
 
 .container-fixed{
   padding: 0.5em;
   background-color: white;
+  z-index: 99999;
 }
 
 .menu{
@@ -28,4 +30,16 @@ ion-content{
 
 .see-all{
   text-align: right;
+}
+
+.blogs{
+  padding-bottom: 1em;
+}
+
+.posts{
+  background-color: transparent;
+}
+
+.post{
+  --background: transparent;
 }

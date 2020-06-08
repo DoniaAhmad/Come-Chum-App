@@ -15,8 +15,8 @@
     <ion-grid>
         <ion-row>
             <!-- search bar -->
-            <ion-searchbar class="search" placeholder="Search here .." showCancelButton="focus">
-                <img class="advanced" src="../../../assets/imgs/advanced.png" />
+            <ion-searchbar class="search" placeholder="Search here ..">
+                <img class="advanced" src="../../../assets/imgs/advanced.png" (click)="advanced()" />
             </ion-searchbar>
             <!-- end search bar -->
         </ion-row>
@@ -28,7 +28,7 @@
             <ion-col size="6">
                 <p class="see-all">See all</p>
             </ion-col>
-            <ion-slides [options]="slideOpts">
+            <ion-slides [options]="slideOpts" class="blogs">
                 <ion-slide *ngFor="let blog of trendingBlogs">
                     <app-blog></app-blog>
                 </ion-slide>
@@ -36,8 +36,8 @@
             <!-- end trending blogs -->
         </ion-row>
         <ion-row>
-            <ion-list lines="none">
-                <ion-item *ngFor="let post of feed">
+            <ion-list lines="none" class="posts">
+                <ion-item class="post" *ngFor="let post of feed">
                     <app-post></app-post>
                 </ion-item>
             </ion-list>

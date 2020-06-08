@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { BlogsService } from 'src/app/services/blogs.service';
 import { FeedService } from 'src/app/services/feed.service';
+import { ModalController } from '@ionic/angular';
+import { ModalSearchPage } from '../modal-search/modal-search.page';
 
 @Component({
   selector: 'app-home',
@@ -28,7 +30,8 @@ export class HomePage {
 
   constructor(
     private blogsService: BlogsService,
-    private feedService: FeedService) {}
+    private feedService: FeedService,
+    private modalController: ModalController) {}
 
   getTrendingBlogs() {
     this.blogsService.getTrending().subscribe( data => {
@@ -51,8 +54,14 @@ export class HomePage {
     });
   }
 
-  advanced() {
-    // open modal filter
+  async advanced() {
+    const modal = await this.modalController.create({
+      component: ModalSearchPage,
+      swipeToClose: true,
+    });
+    await modal.present();
+    const { data } = await modal.onWillDismiss();
+    console.log(data);
   }
 
 }

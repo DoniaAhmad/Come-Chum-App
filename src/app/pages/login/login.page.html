@@ -11,7 +11,7 @@
     </ion-item>
   </ion-list>
   <p class="forgot" (click)="forgot()">{{"login.forgot" | translate}}</p>
-  <ion-button>{{"login.title" | translate}}</ion-button>
+  <ion-button (click)="login()">{{"login.title" | translate}}</ion-button>
   <p class="create" (click)="register()">{{"login.create_new_account" | translate}}</p>
   <ion-grid>
     <ion-row>
