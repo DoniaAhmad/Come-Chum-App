@@ -1,0 +1,15 @@
+ion-icon{
+    color: #aaa;
+    position: absolute;
+    right: 1em;
+    font-size: 1em;
+}
+
+.title{
+    margin: 1em;
+}
+
+.header{
+    --background: linear-gradient( to right, var(--ion-color-primary) 0%, var(--ion-color-secondary) 100% );
+    color: white;
+}

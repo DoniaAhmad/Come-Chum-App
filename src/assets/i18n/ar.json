@@ -9,7 +9,19 @@
         "phone" : "رقم الهاتف",
         "create" : "إنشاء",
         "continue" : "استكمال",
-        "enter_required_data" : "ادخل كل البيانات الضروريه"
+        "enter_required_data" : "ادخل كل البيانات الضروريه",
+        "country" : "الدولة",
+        "city" : "المدينة",
+        "travellers" : "عدد المسافرين",
+        "from" : "من",
+        "to" : "إلى",
+        "apply" : "تطبيق",
+        "blogs" : "المدونات",
+        "events" : "الايفينتات",
+        "groups" : "الجروبات",
+        "notifications" : "الاشعارات",
+        "contests" : "المسابقات",
+        "settings" : "الاعدادات"
     },
     "info" : {
         "slide1_title" : "ابحث عن المكان المناسب",
@@ -36,5 +48,18 @@
         "title" : "تفعيل الحساب",
         "subtitle" : "تفحص بريدك الالكتروني .. لقد تم إرسال رسالة التفعيل",
         "send_again" : "أرسل مجددا"
+    },
+    "search" : {
+        "filter" : "فلترة",
+        "select_interests" : "اختر الاهتمامات"
+    },
+    "settings" : {
+        "account" : "الحساب",
+        "edit_profile" : "تعديل البيانات",
+        "change_password" : "تغيير كلمة المرور",
+        "language" : "اللغة",
+        "other" : "اخرى",
+        "privacy_policy" : "سياسة الخصوصية",
+        "about_app" : "عن التطبيق"
     }
 }

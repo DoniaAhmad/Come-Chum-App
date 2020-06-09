@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { TabsPage } from './tabs.page';
 import { HomePage } from '../home/home.page';
+import { NotificationsPage } from '../notifications/notifications.page';
 
 
 const routes: Routes = [
@@ -30,16 +31,12 @@ const routes: Routes = [
         component: HomePage,
       },
       {
-        path: 'groups',
-        component: HomePage,
-      },
-      {
         path: 'chat',
         component: HomePage,
       },
       {
         path: 'notifications',
-        component: HomePage,
+        component: NotificationsPage,
       }
     ]
   }

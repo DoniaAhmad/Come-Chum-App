@@ -9,7 +9,19 @@
         "phone" : "Phone",
         "create" : "Create",
         "continue" : "Continue",
-        "enter_required_data" : "Enter all required data"
+        "enter_required_data" : "Enter all required data",
+        "country" : "Country",
+        "city" : "City",
+        "travellers" : "No. Travellers",
+        "from" : "From",
+        "to" : "To",
+        "apply" : "Apply",
+        "blogs" : "Blogs",
+        "events" : "Events",
+        "groups" : "Groups",
+        "notifications" : "Notifications",
+        "contests" : "Contests",
+        "settings" : "Settings"
     },
     "info" : {
         "slide1_title" : "Search for the right place",
@@ -36,5 +48,18 @@
         "title" : "Activate",
         "subtitle" : "Check your email .. We have sent you an activation email",
         "send_again" : "Send Again"
+    },
+    "search" : {
+        "filter" : "Filter",
+        "select_interests" : "Select Interests"
+    },
+    "settings" : {
+        "account" : "Account",
+        "edit_profile" : "Edit Profile",
+        "change_password" : "Change Password",
+        "language" : "Language",
+        "other" : "Other",
+        "privacy_policy" : "Privacy Policy",
+        "about_app" : "About App"
     }
 }

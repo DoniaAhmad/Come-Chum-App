@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { ModalSearchPageRoutingModule } from './modal-search-routing.module';
-import { ModalSearchPage } from './modal-search.page';
+import { SettingsPageRoutingModule } from './settings-routing.module';
+import { SettingsPage } from './settings.page';
 import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
@@ -11,9 +11,9 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     FormsModule,
     IonicModule,
-    ModalSearchPageRoutingModule,
+    SettingsPageRoutingModule,
     TranslateModule
   ],
-  declarations: [ModalSearchPage]
+  declarations: [SettingsPage]
 })
-export class ModalSearchPageModule {}
+export class SettingsPageModule {}

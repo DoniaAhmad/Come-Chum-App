@@ -34,10 +34,23 @@ const routes: Routes = [
   {
     path: 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
-  },  {
+  },
+  {
     path: 'modal-search',
     loadChildren: () => import('./pages/modal-search/modal-search.module').then( m => m.ModalSearchPageModule)
   },
+  {
+    path: 'blogs',
+    loadChildren: () => import('./pages/blogs/blogs.module').then( m => m.BlogsPageModule)
+  },
+  {
+    path: 'notifications',
+    loadChildren: () => import('./pages/notifications/notifications.module').then( m => m.NotificationsPageModule)
+  },  {
+    path: 'settings',
+    loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
+  },
+
 
 
 ];

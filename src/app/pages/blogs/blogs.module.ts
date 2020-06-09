@@ -2,18 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { ModalSearchPageRoutingModule } from './modal-search-routing.module';
-import { ModalSearchPage } from './modal-search.page';
+import { BlogsPageRoutingModule } from './blogs-routing.module';
+import { BlogsPage } from './blogs.page';
 import { TranslateModule } from '@ngx-translate/core';
+import { BlogComponent } from 'src/app/components/blog/blog.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ModalSearchPageRoutingModule,
+    BlogsPageRoutingModule,
     TranslateModule
   ],
-  declarations: [ModalSearchPage]
+  declarations: [BlogsPage, BlogComponent]
 })
-export class ModalSearchPageModule {}
+export class BlogsPageModule {}
