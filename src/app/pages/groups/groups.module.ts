@@ -2,18 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { MessagesPageRoutingModule } from './messages-routing.module';
-import { MessagesPage } from './messages.page';
+import { GroupsPageRoutingModule } from './groups-routing.module';
+import { GroupsPage } from './groups.page';
 import { TranslateModule } from '@ngx-translate/core';
+import { GroupComponent } from 'src/app/components/group/group.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MessagesPageRoutingModule,
+    GroupsPageRoutingModule,
     TranslateModule
   ],
-  declarations: [MessagesPage]
+  declarations: [GroupsPage, GroupComponent]
 })
-export class MessagesPageModule {}
+export class GroupsPageModule {}

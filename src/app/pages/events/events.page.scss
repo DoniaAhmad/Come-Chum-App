@@ -1,0 +1,33 @@
+ion-content{
+    --background: linear-gradient( to bottom, #fff 0%, #edf0f6 100% );
+}
+
+.title{
+    margin: 1em;
+    width: 5em;
+}
+
+.subtitle{
+    margin: 2em;
+    margin-bottom: 0em;
+}
+
+.search{
+    background: #eee;
+    border-radius: 25px;
+    font-size: 0.8em;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.active{
+    background: linear-gradient( to right, var(--ion-color-primary) 0%, var(--ion-color-secondary) 100% );
+    color: white;
+}
+
+ion-list{
+    background: transparent;
+    ion-item{
+        --background: transparent;
+    }
+}

@@ -2,18 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { MessagesPageRoutingModule } from './messages-routing.module';
-import { MessagesPage } from './messages.page';
+import { EventsPageRoutingModule } from './events-routing.module';
+import { EventsPage } from './events.page';
 import { TranslateModule } from '@ngx-translate/core';
+import { EventComponent } from 'src/app/components/event/event.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MessagesPageRoutingModule,
+    EventsPageRoutingModule,
     TranslateModule
   ],
-  declarations: [MessagesPage]
+  declarations: [EventsPage, EventComponent]
 })
-export class MessagesPageModule {}
+export class EventsPageModule {}

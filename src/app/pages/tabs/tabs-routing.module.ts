@@ -5,6 +5,8 @@ import { TabsPage } from './tabs.page';
 import { HomePage } from '../home/home.page';
 import { NotificationsPage } from '../notifications/notifications.page';
 import { ChatsPage } from '../chats/chats.page';
+import { GroupsPage } from '../groups/groups.page';
+import { EventsPage } from '../events/events.page';
 
 
 const routes: Routes = [
@@ -24,12 +26,12 @@ const routes: Routes = [
       ,
       {
         path: 'events',
-        component: HomePage,
+        component: EventsPage,
       }
       ,
       {
         path: 'groups',
-        component: HomePage,
+        component: GroupsPage,
       },
       {
         path: 'chat',

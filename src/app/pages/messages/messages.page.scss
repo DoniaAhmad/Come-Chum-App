@@ -1,0 +1,77 @@
+.header{
+    border-bottom: 1px solid #eee;
+    margin-top: 0.5em;
+}
+
+.center{
+    text-align: center;
+}
+
+.back{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+}
+
+
+.input{
+    background-color: #eee;
+    border-radius: 25px;
+    margin: 1em;
+    width: 90%;
+}
+
+.input-icon{
+    background: linear-gradient( to right, var(--ion-color-primary) 0%, var(--ion-color-secondary) 100% );
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    padding: 0.5em;
+    color: white;
+    position: absolute;
+    right: 20%;
+    top: 1.2em;
+    z-index: 99;
+}
+
+.icon2{
+    right: 9%;
+}
+
+.name{
+
+}
+
+.status{
+    color: #aaa;
+    font-size: 0.6em;
+}
+
+.bubble{
+    max-width: 70%;
+    min-width: 20%;
+    text-align: center;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.sender{
+    background: linear-gradient( to right, var(--ion-color-primary) 0%, var(--ion-color-secondary) 100% );
+    border-radius: 25px 25px 0px 25px;
+    color: white;
+    float: right;
+}
+
+.reciver{
+    background: #eee;
+    border-radius: 25px 25px 25px 0px;
+    color: #000;
+    float: left;
+}
+
+.full-width{
+    width: 100%;
+}

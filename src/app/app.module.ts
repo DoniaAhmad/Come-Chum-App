@@ -13,7 +13,7 @@ import { UserService } from './services/user.service';
 import { BlogsService } from './services/blogs.service';
 import { FeedService } from './services/feed.service';
 import { CommonModule } from '@angular/common';
-
+import { DatePicker } from '@ionic-native/date-picker/ngx';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -42,6 +42,7 @@ export function createTranslateLoader(http: HttpClient) {
     UserService,
     BlogsService,
     FeedService,
+    DatePicker,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
