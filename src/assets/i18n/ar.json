@@ -21,7 +21,9 @@
         "groups" : "الجروبات",
         "notifications" : "الاشعارات",
         "contests" : "المسابقات",
-        "settings" : "الاعدادات"
+        "settings" : "الاعدادات",
+        "home" : "الرئيسية",
+        "chats" : "الرسائل"
     },
     "info" : {
         "slide1_title" : "ابحث عن المكان المناسب",

@@ -21,7 +21,9 @@
         "groups" : "Groups",
         "notifications" : "Notifications",
         "contests" : "Contests",
-        "settings" : "Settings"
+        "settings" : "Settings",
+        "home" : "Home",
+        "chats" : "chats"
     },
     "info" : {
         "slide1_title" : "Search for the right place",

@@ -4,6 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { TabsPage } from './tabs.page';
 import { HomePage } from '../home/home.page';
 import { NotificationsPage } from '../notifications/notifications.page';
+import { ChatsPage } from '../chats/chats.page';
 
 
 const routes: Routes = [
@@ -32,7 +33,7 @@ const routes: Routes = [
       },
       {
         path: 'chat',
-        component: HomePage,
+        component: ChatsPage,
       },
       {
         path: 'notifications',

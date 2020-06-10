@@ -1,0 +1,57 @@
+.title{
+    margin: 1em;
+}
+
+.name{
+    margin: 0px;
+    margin-bottom: 0.5em;
+    margin-left: 0.5em;
+}
+
+.body{
+    text-align: left;
+    color: #c4c4c4;
+    margin-left: 0.5em;
+}
+
+img{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+}
+
+.time{
+    font-size: 0.55em;
+}
+
+.online{
+    border-radius: 50%;
+    width: 0.7em;
+    height: 0.7em;
+    background-color: #19c819;
+    z-index: 9999999;
+    position: absolute;
+    bottom: 0px;
+    right: 10%;
+    border: 1px solid white;
+}
+
+.time-unread{
+    width: 100%;
+    text-align: center;
+}
+
+.unread{
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    background: linear-gradient( to right, var(--ion-color-primary) 0%, var(--ion-color-secondary) 100% );
+    margin: auto;
+    margin-top: 0.5em;
+}

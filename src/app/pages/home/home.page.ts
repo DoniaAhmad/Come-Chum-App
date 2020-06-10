@@ -3,6 +3,7 @@ import { BlogsService } from 'src/app/services/blogs.service';
 import { FeedService } from 'src/app/services/feed.service';
 import { ModalController } from '@ionic/angular';
 import { ModalSearchPage } from '../modal-search/modal-search.page';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -31,7 +32,10 @@ export class HomePage {
   constructor(
     private blogsService: BlogsService,
     private feedService: FeedService,
-    private modalController: ModalController) {}
+    private modalController: ModalController,
+    private menu: MenuController) {
+      this.menu.enable(true, 'first');
+    }
 
   getTrendingBlogs() {
     this.blogsService.getTrending().subscribe( data => {
@@ -62,6 +66,10 @@ export class HomePage {
     await modal.present();
     const { data } = await modal.onWillDismiss();
     console.log(data);
+  }
+
+  toggleMenu() {
+    this.menu.open('first');
   }
 
 }

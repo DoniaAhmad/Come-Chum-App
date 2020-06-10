@@ -1,0 +1,25 @@
+<ion-content>
+  <h1 class="title">{{"common.chats" | translate}}</h1>
+  <ion-list>
+    <ion-item *ngFor="let chat of chats; let i = index;" (click)="openChat(i)">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <img src="{{chat.image}}" />
+            <div *ngIf="chat.online" class="online"></div>
+          </ion-col>
+          <ion-col size="8">
+            <p class="name">{{chat.name}}</p>
+            <span class="body">{{chat.body}}</span>
+          </ion-col>
+          <ion-col size="2">
+            <div class="time-unread">
+              <span class="time">{{chat.time}}</span>
+              <div *ngIf="chat.unread" class="unread"></div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>

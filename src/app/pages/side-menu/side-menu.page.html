@@ -1,0 +1,18 @@
+<ion-menu side="start" menuId="first" contentId="main">
+  <div>
+    <img src="../../../assets/imgs/logo_sidemenu.png" class="logo"/>
+  </div>
+  <ion-content>
+    <ion-list lines="none">
+      <ion-item routerLink="/tabs/home">{{'common.home' | translate}}</ion-item>
+      <ion-item routerLink="/tabs/groups">{{'common.groups' | translate}}</ion-item>
+      <ion-item routerLink="/tabs/events">{{'common.events' | translate}}</ion-item>
+      <ion-item routerLink="/blogs">{{'common.blogs' | translate}}</ion-item>
+      <ion-item routerLink="/contests">{{'common.contests' | translate}}</ion-item>
+      <ion-item routerLink="/settings">{{'common.settings' | translate}}</ion-item>
+    </ion-list>
+    <div class="logout" (click)="logout()">
+      <p>Logout</p>
+    </div>
+  </ion-content>
+</ion-menu>

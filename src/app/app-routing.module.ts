@@ -50,6 +50,18 @@ const routes: Routes = [
     path: 'settings',
     loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
   },
+  {
+    path: 'side-menu',
+    loadChildren: () => import('./pages/side-menu/side-menu.module').then( m => m.SideMenuPageModule)
+  },
+  {
+    path: 'chats',
+    loadChildren: () => import('./pages/chats/chats.module').then( m => m.ChatsPageModule)
+  },
+  {
+    path: 'messages',
+    loadChildren: () => import('./pages/messages/messages.module').then( m => m.MessagesPageModule)
+  },
 
 
 

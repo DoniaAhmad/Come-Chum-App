@@ -1,4 +1,6 @@
-<ion-content>
+<app-side-menu></app-side-menu>
+<ion-content id="main">
+
     <div slot="fixed" class="container-fixed">
         <ion-grid>
             <ion-row>
@@ -7,7 +9,7 @@
                 </ion-col>
                 <ion-col size="7"></ion-col>
                 <ion-col size="2">
-                    <img  class="menu" src="../../../assets/imgs/menu.png" />
+                    <img  class="menu" src="../../../assets/imgs/menu.png" (click)="toggleMenu()" />
                 </ion-col>
             </ion-row>
         </ion-grid>
