@@ -26,9 +26,9 @@ export class EventsPage implements OnInit {
     }];
   }
 
-  search(value) {
-    this.search = value;
-    if (value) {
+  searchDate(value) {
+    this.searchType = value;
+    if (value === 3) {
       this.datePicker.show({
         date: new Date(),
         mode: 'date',

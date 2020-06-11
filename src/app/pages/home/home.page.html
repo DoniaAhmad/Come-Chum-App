@@ -39,7 +39,7 @@
         </ion-row>
         <ion-row>
             <ion-list lines="none" class="posts">
-                <ion-item class="post" *ngFor="let post of feed">
+                <ion-item class="post" *ngFor="let post of feed;let i = index" (click)="openPost(i)">
                     <app-post></app-post>
                 </ion-item>
             </ion-list>

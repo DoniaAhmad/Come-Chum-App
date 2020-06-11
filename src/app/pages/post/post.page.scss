@@ -1,0 +1,57 @@
+ion-content{
+    --background:#edf0f6;
+}
+
+.comment-container{
+    background: white;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    border-radius: 100px;
+    box-shadow: 0px -10px 20px #00000012;
+}
+
+.input{
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 25px;
+    margin: 1em;
+    width: 90%;
+}
+
+.input-icon{
+    background: linear-gradient( to right, var(--ion-color-primary) 0%, var(--ion-color-secondary) 100% );
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    padding: 0.5em;
+    color: white;
+    position: absolute;
+    right: 20%;
+    top: 1.2em;
+    z-index: 99;
+}
+
+.icon2{
+    right: 9%;
+}
+
+.comments-container{
+    height: 23%;
+    .comments-list{
+        height: 100%;
+        border-radius: 25px;
+    }
+    .profile-picture{
+        border-radius: 50%;
+        width: 2em;
+        height: 2em;
+        border: 1px solid #eee;
+    }
+    .user-name{
+        margin: 0px;
+    }
+    .comment{
+        font-size: 0.7em;
+    }
+}

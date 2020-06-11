@@ -4,6 +4,7 @@ import { FeedService } from 'src/app/services/feed.service';
 import { ModalController } from '@ionic/angular';
 import { ModalSearchPage } from '../modal-search/modal-search.page';
 import { MenuController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -33,7 +34,8 @@ export class HomePage {
     private blogsService: BlogsService,
     private feedService: FeedService,
     private modalController: ModalController,
-    private menu: MenuController) {
+    private menu: MenuController,
+    private router: Router) {
       this.menu.enable(true, 'first');
     }
 
@@ -70,6 +72,10 @@ export class HomePage {
 
   toggleMenu() {
     this.menu.open('first');
+  }
+
+  openPost(index) {
+    this.router.navigate(['/post']);
   }
 
 }

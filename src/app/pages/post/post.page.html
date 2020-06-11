@@ -1,9 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>post</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <app-post></app-post>
+
+  <div class="comments-container">
+    <ion-list class="comments-list" lines="none">
+      <ion-item *ngFor="let comment of comments">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="2">
+              <img class="profile-picture" src="https://static.zerochan.net/Nase.Hiroomi.full.1643065.jpg"/>
+            </ion-col>
+            <ion-col size="10">
+              <p class="user-name">Angel</p>
+              <span class="comment">looks so good .</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div class="comment-container">
+    <ion-input class="input" placeholder="Type your comment"></ion-input>
+    <ion-icon class="input-icon" name="camera-outline"></ion-icon>
+    <ion-icon class="input-icon icon2" name="send-outline"></ion-icon>
+  </div>
 
 </ion-content>
+
