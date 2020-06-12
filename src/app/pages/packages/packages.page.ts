@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PackagesPage implements OnInit {
 
+  public packages = [];
+  public cost = 150;
+
+  public slideOpts = {
+    slidesPerView: 1.2,
+    spaceBetween: 10
+  };
+
   constructor() { }
 
   ngOnInit() {
+    this.getPackages();
+  }
+
+  getPackages() {
+    this.packages = [{}, {}, {}];
   }
 
 }

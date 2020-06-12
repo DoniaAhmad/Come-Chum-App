@@ -13,6 +13,10 @@ export class SideMenuPage implements OnInit {
   ngOnInit() {
   }
 
+  navigate(url) {
+    this.router.navigate([url]);
+  }
+
   logout() {
     localStorage.removeItem('user');
     localStorage.removeItem('language');

@@ -23,7 +23,9 @@
         "contests" : "Contests",
         "settings" : "Settings",
         "home" : "Home",
-        "chats" : "chats"
+        "chats" : "chats",
+        "profile" : "Profile",
+        "packages" : "Packages"
     },
     "info" : {
         "slide1_title" : "Search for the right place",
@@ -67,5 +69,9 @@
     "create_post" : {
         "title" : "New Post",
         "type_post" : "Type your post here..."
+    },
+    "packages" : {
+        "pay" : "Pay",
+        "total" : "Total"
     }
 }

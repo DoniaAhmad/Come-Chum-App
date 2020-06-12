@@ -18,17 +18,17 @@ export class AppComponent {
     private translate: TranslateService
   ) {
     this.initializeApp();
-    if(localStorage.getItem('language')) {
+    if (localStorage.getItem('language')) {
       translate.setDefaultLang(localStorage.getItem('language'));
     } else {
       translate.setDefaultLang('en');
     }
-    
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
+      this.statusBar.backgroundColorByHexString('#fff');
       this.splashScreen.hide();
     });
   }
