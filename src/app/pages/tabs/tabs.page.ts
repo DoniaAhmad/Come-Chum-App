@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tabs',
@@ -17,6 +18,12 @@ export class TabsPage implements OnInit {
     icon : 'calendar',
     router : 'events'
   }, {
+    icon : 'add-circle-outline',
+    router : 'create-post'
+  }, {
+    icon : 'reader-outline',
+    router : 'blogs'
+  }, {
     icon : 'chatbox-ellipses-outline',
     router : 'chat'
   }, {
@@ -24,7 +31,9 @@ export class TabsPage implements OnInit {
     router : 'notifications'
   }];
 
-  constructor() { }
+  constructor(public router: Router) {
+    console.log('this.router.url', this.router.url);
+  }
 
   ngOnInit() {
   }

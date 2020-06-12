@@ -7,6 +7,8 @@ import { NotificationsPage } from '../notifications/notifications.page';
 import { ChatsPage } from '../chats/chats.page';
 import { GroupsPage } from '../groups/groups.page';
 import { EventsPage } from '../events/events.page';
+import { BlogsPage } from '../blogs/blogs.page';
+import { CreatePostPage } from '../create-post/create-post.page';
 
 
 const routes: Routes = [
@@ -22,16 +24,22 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomePage,
-      }
-      ,
+      },
       {
         path: 'events',
         component: EventsPage,
-      }
-      ,
+      },
       {
         path: 'groups',
         component: GroupsPage,
+      },
+      {
+        path: 'blogs',
+        component: BlogsPage,
+      },
+      {
+        path: 'create-post',
+        component: CreatePostPage,
       },
       {
         path: 'chat',

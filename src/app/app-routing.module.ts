@@ -82,6 +82,30 @@ const routes: Routes = [
     path: 'create-post',
     loadChildren: () => import('./pages/create-post/create-post.module').then( m => m.CreatePostPageModule)
   },
+  {
+    path: 'group',
+    loadChildren: () => import('./pages/group/group.module').then( m => m.GroupPageModule)
+  },
+  {
+    path: 'event',
+    loadChildren: () => import('./pages/event/event.module').then( m => m.EventPageModule)
+  },
+  {
+    path: 'blog',
+    loadChildren: () => import('./pages/blog/blog.module').then( m => m.BlogPageModule)
+  },
+  {
+    path: 'contest',
+    loadChildren: () => import('./pages/contest/contest.module').then( m => m.ContestPageModule)
+  },
+  {
+    path: 'packages',
+    loadChildren: () => import('./pages/packages/packages.module').then( m => m.PackagesPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
+  },
 
 
 
