@@ -63,5 +63,9 @@
         "other" : "اخرى",
         "privacy_policy" : "سياسة الخصوصية",
         "about_app" : "عن التطبيق"
+    },
+    "create_post" : {
+        "title" : "منشور جديد",
+        "type_post" : "اكتب منشورك هنا"
     }
 }

@@ -63,5 +63,9 @@
         "other" : "Other",
         "privacy_policy" : "Privacy Policy",
         "about_app" : "About App"
+    },
+    "create_post" : {
+        "title" : "New Post",
+        "type_post" : "Type your post here..."
     }
 }

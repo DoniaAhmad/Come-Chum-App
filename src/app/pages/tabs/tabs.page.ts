@@ -32,7 +32,6 @@ export class TabsPage implements OnInit {
   }];
 
   constructor(public router: Router) {
-    console.log('this.router.url', this.router.url);
   }
 
   ngOnInit() {
