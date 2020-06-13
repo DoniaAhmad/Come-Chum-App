@@ -3,6 +3,8 @@
         "loading" : "Loading",
         "email" : "Email",
         "password" : "Password",
+        "old_password" : "Old Password",
+        "new_password" : "New Password",
         "or" : "OR",
         "name" : "Name",
         "confirm_password" : "Confirm Password",
@@ -24,8 +26,10 @@
         "settings" : "Settings",
         "home" : "Home",
         "chats" : "chats",
-        "profile" : "Profile",
-        "packages" : "Packages"
+        "profile" : "My Profile",
+        "packages" : "Packages",
+        "edit_profile" : "Edit Profile",
+        "wrong_data" : "Wrong data , please check again"
     },
     "info" : {
         "slide1_title" : "Search for the right place",

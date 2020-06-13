@@ -14,6 +14,7 @@ import { BlogsService } from './services/blogs.service';
 import { FeedService } from './services/feed.service';
 import { CommonModule } from '@angular/common';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -43,6 +44,7 @@ export function createTranslateLoader(http: HttpClient) {
     BlogsService,
     FeedService,
     DatePicker,
+    InAppBrowser,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

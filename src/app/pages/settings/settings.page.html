@@ -1,7 +1,7 @@
 <ion-content>
   <h1 class="title">{{"common.settings" | translate}}</h1>
   <ion-list>
-    <ion-item *ngFor="let item of items" [ngClass]="{'header': item.type == 'title'}" routerLink="{{item.type == 'subtitle' ? item.route : './'}}">
+    <ion-item *ngFor="let item of items; let i = index" [ngClass]="{'header': item.type == 'title'}" (click)="navigate(i)">
       <p>{{item.title | translate}}</p>
       <ion-icon *ngIf="item.type == 'subtitle'" name="play-sharp"></ion-icon>
     </ion-item>

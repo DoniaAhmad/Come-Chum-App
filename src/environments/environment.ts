@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  host : "http://localhost:4200/",
-  api : "http://localhost:4200/api/",
+  host : 'https://chumtravel.herokuapp.com/',
+  api : 'https://chumtravel.herokuapp.com/api/',
 };
 
 /*

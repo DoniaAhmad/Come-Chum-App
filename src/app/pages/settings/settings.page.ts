@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-settings',
@@ -11,42 +13,59 @@ export class SettingsPage implements OnInit {
   public items = [
     {
       title : 'settings.account',
-      type : 'title'
+      type : 'title',
+      external : false
     },
     {
       title : 'settings.edit_profile',
       route : 'edit-profile',
-      type : 'subtitle'
+      type : 'subtitle',
+      external : false
     },
     {
       title : 'settings.change_password',
       route : 'change-password',
-      type : 'subtitle'
+      type : 'subtitle',
+      external : false
     },
     {
       title : 'settings.language',
-      route : 'change-language',
-      type : 'subtitle'
+      route : 'language',
+      type : 'subtitle',
+      external : false
     },
     {
       title : 'settings.other',
-      type : 'title'
+      type : 'title',
+      external : false
     },
     {
       title : 'settings.privacy_policy',
-      route : 'web?p=privacy_policy',
-      type : 'subtitle'
+      route : `${environment.host}terms`,
+      type : 'subtitle',
+      external : true
     },
     {
       title : 'settings.about_app',
-      route : 'web?p=about',
-      type : 'subtitle'
+      route : `${environment.host}`,
+      type : 'subtitle',
+      external : true
     }
   ];
 
-  constructor() { }
+  constructor(
+    private iab: InAppBrowser,
+    private router: Router) { }
 
   ngOnInit() {
+  }
+
+  navigate(index) {
+    if (this.items[index].external) {
+      const browser = this.iab.create(this.items[index].route, '_blank', { toolbar: 'no', location: 'no', zoom: 'no' });
+    } else if (this.items[index].route !== undefined) {
+      this.router.navigate([this.items[index].route]);
+    }
   }
 
 }

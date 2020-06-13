@@ -24,9 +24,9 @@ export class UserService {
   }
 
   login(email, password) {
-    return this.httpClient.post(`${environment.api}/users/login`, {
-      "email": email,
-      "password": password
+    return this.httpClient.post(`${environment.api}users/auth`, {
+      email,
+      password
     });
   }
 
@@ -38,7 +38,7 @@ export class UserService {
 
   forget(email) {
     return this.httpClient.post(`${environment.api}/users/forgot`, {
-      "email": email
+      email
     });
   }
 }

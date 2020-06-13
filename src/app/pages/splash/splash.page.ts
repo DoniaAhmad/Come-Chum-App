@@ -14,18 +14,18 @@ export class SplashPage implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    if(localStorage.getItem('firstTime') == null) {
+    if (localStorage.getItem('firstTime') == null) {
       const source = interval(1000);
       this.subscription = source.subscribe(val => {
-        localStorage.setItem('firstTime',"false");
+        localStorage.setItem('firstTime', 'false');
         this.router.navigate(['/info']);
         this.subscription.unsubscribe();
       });
     } else {
-      if(localStorage.getItem('user') == null){
+      if (localStorage.getItem('user') == null){
         this.router.navigate(['/login']);
       } else {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/tabs']);
       }
     }
   }

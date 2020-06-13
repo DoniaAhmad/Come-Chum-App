@@ -2,20 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { ProfilePageRoutingModule } from './profile-routing.module';
-import { ProfilePage } from './profile.page';
+import { LanguagePageRoutingModule } from './language-routing.module';
+import { LanguagePage } from './language.page';
 import { TranslateModule } from '@ngx-translate/core';
-import { PostComponent } from 'src/app/components/post/post.component';
-
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProfilePageRoutingModule,
+    LanguagePageRoutingModule,
     TranslateModule
   ],
-  declarations: [ProfilePage, PostComponent]
+  declarations: [LanguagePage]
 })
-export class ProfilePageModule {}
+export class LanguagePageModule {}
