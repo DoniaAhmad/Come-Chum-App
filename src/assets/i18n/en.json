@@ -9,6 +9,12 @@
         "name" : "Name",
         "confirm_password" : "Confirm Password",
         "phone" : "Phone",
+        "postal_code" : "Postal Code",
+        "phone_prefix" : "Phone Prefix",
+        "gender":"Gender",
+        "about":"About",
+        "profile_picture" : "Profile Picture",
+        "cover":"Cover",
         "create" : "Create",
         "continue" : "Continue",
         "enter_required_data" : "Enter all required data",
@@ -50,7 +56,8 @@
     },
     "forgot" : {
         "title" : "Forgot Password",
-        "subtitle" : "Enter the email address that you use to signup your account"
+        "subtitle" : "Enter the email address that you use to signup your account",
+        "success" : "Check your email for reset password"
     },
     "activate" : {
         "title" : "Activate",

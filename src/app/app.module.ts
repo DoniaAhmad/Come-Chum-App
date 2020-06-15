@@ -15,10 +15,19 @@ import { FeedService } from './services/feed.service';
 import { CommonModule } from '@angular/common';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
+import { AuthService } from './services/auth.service';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+import { Facebook } from '@ionic-native/facebook/ngx';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { ImagePicker } from '@ionic-native/image-picker/ngx';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,6 +38,8 @@ export function createTranslateLoader(http: HttpClient) {
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -43,8 +54,13 @@ export function createTranslateLoader(http: HttpClient) {
     UserService,
     BlogsService,
     FeedService,
+    AuthService,
     DatePicker,
     InAppBrowser,
+    FirebaseAuthentication,
+    Facebook,
+    GooglePlus,
+    ImagePicker,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

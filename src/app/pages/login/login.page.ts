@@ -3,6 +3,11 @@ import { UserService } from 'src/app/services/user.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
+import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
+import { environment } from 'src/environments/environment';
+import { AuthService } from 'src/app/services/auth.service';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +26,11 @@ export class LoginPage implements OnInit {
     private userService: UserService,
     private translate: TranslateService,
     private router: Router,
-    private loadingController: LoadingController) { }
+    private loadingController: LoadingController,
+    private firebaseAuthentication: FirebaseAuthentication,
+    private auth: AuthService,
+    private fb: Facebook,
+    private googlePlus: GooglePlus) { }
 
   ngOnInit() {
     this.translate.get(['common.loading', 'common.enter_required_data', 'common.wrong_data']).subscribe( data => {
@@ -61,6 +70,26 @@ export class LoginPage implements OnInit {
 
   register() {
     this.router.navigate(['register']);
+  }
+
+  loginFb() {
+    this.fb.login(['public_profile', 'email'])
+    .then((res: FacebookLoginResponse) => alert('Logged into Facebook!'))
+    .catch(e => alert('Error logging into Facebook'));
+  }
+
+  loginTwitter() {
+    // this.auth.TwitterAuth();
+    // this.firebaseAuthentication.signInWithTwitter(environment.firebase.twitter.token, environment.firebase.twitter.secret)
+    // .then((res: any) => console.log(res));
+  }
+
+  loginGoogle() {
+    this.googlePlus.login({})
+    .then(res => alert(JSON.stringify(res)))
+    .catch(err => alert(JSON.stringify(err)));
+    // this.firebaseAuthentication.signInWithGoogle(environment.firebase.google.token, environment.firebase.google.secret)
+    // .then((res: any) => console.log(res));
   }
 
 }

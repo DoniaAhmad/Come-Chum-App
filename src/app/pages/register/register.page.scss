@@ -36,3 +36,47 @@ ion-button{
   left: 0px;
   right: 0px;
 }
+
+.interests-container{
+    margin: 2em;
+}
+
+.interest{
+    border: 1px solid #dcdcdc;
+    border-radius: 15px;
+    padding: 1em;
+    margin: 1em;
+    margin: 0.5em;
+    display: inline-block;
+}
+
+.active{
+    background: linear-gradient( to right, var(--ion-color-primary) 0%, var(--ion-color-secondary) 100% );
+    color: white;
+    border: none;
+}
+
+.profile-picture{
+    border-radius: 50%;
+    box-shadow: 0 14px 20px 0 rgba(0,0,0,.05);
+    width: 5em;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+}
+
+.cover{
+    width: 14em;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    border: 1px dashed #d95bbe;
+    border-radius: 25px;
+    padding: 5em;
+}

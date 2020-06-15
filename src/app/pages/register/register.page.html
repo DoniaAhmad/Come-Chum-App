@@ -1,36 +1,106 @@
 <ion-content>
   <h1 class="title">{{"register.title" | translate}}</h1>
-  <ion-list>
-    <ion-item>
-      <ion-label position="floating">{{'common.name' | translate}}</ion-label>
-      <ion-input class="input" type="text" [(ngModel)]="name"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">{{'common.email' | translate}}</ion-label>
-      <ion-input class="input" type="email" [(ngModel)]="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">{{'common.password' | translate}}</ion-label>
-      <ion-input type="password" [(ngModel)]="password"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">{{'common.confirm_password' | translate}}</ion-label>
-      <ion-input type="password" [(ngModel)]="confirm_password"></ion-input>
-    </ion-item>
-    <ion-grid>
-      <ion-row>
-        <ion-col col-2>
-          <select class="countries">
-            <option>US +1</option>
-            <option>EG +20</option>
-          </select>
-        </ion-col>
-        <ion-col col-10>
-          <ion-input class="phone" type="text" [(ngModel)]="phone" placeholder="{{'common.phone' | translate}}"></ion-input>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-list>
-  <p class="note">{{"register.subtitle" | translate}}</p>
-  <ion-button>{{"common.create" | translate}}</ion-button>
+  <div *ngIf="page == 1">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">{{'common.name' | translate}}</ion-label>
+        <ion-input class="input" type="text" [(ngModel)]="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">{{'common.email' | translate}}</ion-label>
+        <ion-input class="input" type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">{{'common.password' | translate}}</ion-label>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">{{'common.confirm_password' | translate}}</ion-label>
+        <ion-input type="password" [(ngModel)]="confirm_password"></ion-input>
+      </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-2>
+            <ion-select class="countries" [(ngModel)]="prefix_phone" placeholder="{{'common.phone_prefix' | translate}}">
+              <ion-select-option value="0">US +1</ion-select-option>
+              <ion-select-option value="1">EG +20</ion-select-option>
+            </ion-select>
+          </ion-col>
+          <ion-col col-10>
+            <ion-input class="phone" type="text" [(ngModel)]="phone" placeholder="{{'common.phone' | translate}}"></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+    <p class="note">{{"register.subtitle" | translate}}</p>
+    <ion-button (click)="create()">{{"common.create" | translate}}</ion-button>
+  </div>
+  <div *ngIf="page == 2">
+    <ion-list>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <ion-select class="countries" [(ngModel)]="country" placeholder="{{'common.country' | translate}}">
+              <ion-select-option value="0">United States</ion-select-option>
+              <ion-select-option value="1">Egypt</ion-select-option>
+            </ion-select>
+          </ion-col>
+          <ion-col col-6>
+            <ion-select class="countries" [(ngModel)]="city" placeholder="{{'common.city' | translate}}">
+              <ion-select-option value="0">Cairo</ion-select-option>
+              <ion-select-option value="1">Alexandria</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            <ion-select class="countries" [(ngModel)]="gender" placeholder="{{'common.gender' | translate}}">
+              <ion-select-option value="0">male</ion-select-option>
+              <ion-select-option value="1">female</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            <ion-item>
+              <ion-input class="input" type="text" [(ngModel)]="postal_code" placeholder="{{'common.postal_code' | translate}}"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+    <ion-button (click)="create()">{{"common.continue" | translate}}</ion-button>
+  </div>
+  <div *ngIf="page == 3">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">{{'common.about' | translate}}</ion-label>
+        <ion-textarea rows="10" [(ngModel)]="about"></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <ion-button (click)="create()">{{"common.continue" | translate}}</ion-button>
+  </div>
+  <div *ngIf="page == 4" class="interests-container">
+    <p>{{'search.select_interests' | translate}}</p>
+    <div>
+      <span *ngFor="let interest of interests; let i = index" class="interest" (click)="select(i)" [ngClass]="{'active': interestsIndeces[i]}">
+        {{translate.currentLang == 'ar' ? interest.name_ar : interest.name_en}}
+      </span>
+    </div>
+    <ion-button (click)="create()">{{"common.continue" | translate}}</ion-button>
+  </div>
+  <div *ngIf="page == 5">
+    <p class="interests-container">{{'common.profile_picture' | translate}}</p>
+    <div>
+      <img class="profile-picture" src="../../../assets/imgs/upload.png" (click)="upload()" />
+    </div>
+    <ion-button (click)="create()">{{"common.continue" | translate}}</ion-button>
+  </div>
+  <div *ngIf="page == 6">
+    <p class="interests-container">{{'common.cover' | translate}}</p>
+    <div>
+      <img class="cover" src="../../../assets/imgs/upload-cover.png" (click)="upload()" />
+    </div>
+    <ion-button (click)="create()">{{"common.continue" | translate}}</ion-button>
+  </div>
 </ion-content>

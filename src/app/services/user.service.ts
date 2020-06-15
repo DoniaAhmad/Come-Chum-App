@@ -31,13 +31,13 @@ export class UserService {
   }
 
   register(data) {
-    return this.httpClient.post(`${environment.api}/users/create`, {
+    return this.httpClient.post(`${environment.api}users/create`, {
       data
     });
   }
 
   forget(email) {
-    return this.httpClient.post(`${environment.api}/users/forgot`, {
+    return this.httpClient.post(`${environment.api}users/forget`, {
       email
     });
   }
