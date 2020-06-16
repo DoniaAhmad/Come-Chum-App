@@ -19,7 +19,7 @@
   </ion-grid>
   <ion-list lines="none">
     <ion-item *ngFor="let event of events" lines="none">
-      <app-event></app-event>
+      <app-event [event]="event"></app-event>
     </ion-item>
   </ion-list>
 </ion-content>

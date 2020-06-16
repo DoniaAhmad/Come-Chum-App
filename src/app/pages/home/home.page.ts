@@ -3,8 +3,8 @@ import { BlogsService } from 'src/app/services/blogs.service';
 import { FeedService } from 'src/app/services/feed.service';
 import { ModalController } from '@ionic/angular';
 import { ModalSearchPage } from '../modal-search/modal-search.page';
-import { MenuController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { MenuController, NavController } from '@ionic/angular';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,14 +13,8 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  public trendingBlogs = [{
-  }, {
-  }, {
-  }];
-  public feed = [{
-  }, {
-  }, {
-  }];
+  public trendingBlogs = [];
+  public feed = [];
   public searchQuery = '';
 
   private pageId = 1;
@@ -35,18 +29,23 @@ export class HomePage {
     private feedService: FeedService,
     private modalController: ModalController,
     private menu: MenuController,
-    private router: Router) {
+    private router: Router,
+    private navCtrl: NavController) {
       this.menu.enable(true, 'first');
+      this.getFeed();
+      this.getTrendingBlogs();
     }
 
   getTrendingBlogs() {
     this.blogsService.getTrending().subscribe( data => {
       this.trendingBlogs = (data as Array<any>);
+      console.log(data);
     });
   }
 
   getFeed() {
     this.feedService.getFeed(1, this.pageId).subscribe( data => {
+      console.log(data);
       this.feed = (data as Array<any>);
       this.pageId++;
     });
@@ -75,7 +74,12 @@ export class HomePage {
   }
 
   openPost(index) {
-    this.router.navigate(['/post']);
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+          post: JSON.stringify(this.feed[index])
+      }
+    };
+    this.navCtrl.navigateForward(['post'], navigationExtras);
   }
 
 }

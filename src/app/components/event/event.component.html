@@ -1,16 +1,15 @@
 <ion-card class="blog">
-  <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
+  <img src="{{event.cover}}" />
   <ion-card-header>
-    <ion-card-title>Event Egypt</ion-card-title>
+    <ion-card-title>{{event.name}}</ion-card-title>
   </ion-card-header>
   <ion-grid>
     <ion-row>
       <ion-col size="8" class="ion-align-self-start">
         <div class="container">
-          <span class="joined">192 Joined</span>
+          <span class="joined">{{event.members}} Joined</span>
           <br>
-          <p class="desc">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          <p class="desc">{{event.about}}
           </p>
         </div>
       </ion-col>

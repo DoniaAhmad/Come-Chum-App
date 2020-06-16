@@ -10,19 +10,19 @@ export class BlogsService {
   constructor(public httpClient: HttpClient) { }
 
   create(data) {
-    return this.httpClient.post(`${environment.api}/blogs/create`,
+    return this.httpClient.post(`${environment.api}blogs/create`,
     data);
   }
 
   getTrending() {
-    return this.httpClient.get(`${environment.api}/blogs/trending`);
+    return this.httpClient.get(`${environment.api}blogs/top`);
   }
 
   getBlogs(pageId) {
-    return this.httpClient.get(`${environment.api}/blogs/all/${pageId}`);
+    return this.httpClient.get(`${environment.api}blogs/all/${pageId}`);
   }
 
   getBlog(blogId) {
-    return this.httpClient.get(`${environment.api}/blogs/blog/${blogId}`);
+    return this.httpClient.get(`${environment.api}blogs/blog/${blogId}`);
   }
 }

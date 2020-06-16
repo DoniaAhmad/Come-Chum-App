@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContestsService } from 'src/app/services/contests.service';
 
 @Component({
   selector: 'app-contests',
@@ -8,18 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class ContestsPage implements OnInit {
 
   public contests = [];
+  private page = 1;
 
-  constructor() { }
+  constructor(
+    private contestsService: ContestsService
+    ) { }
 
   ngOnInit() {
     this.getContests();
   }
 
   getContests() {
-    this.contests = [{
-    }, {
-    }, {
-    }];
+    this.contestsService.getContests(this.page).subscribe( data => {
+      this.contests = (data as Array<any>);
+      console.log(this.contests);
+    });
   }
 
 }

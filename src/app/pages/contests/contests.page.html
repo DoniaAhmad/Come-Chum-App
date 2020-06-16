@@ -2,7 +2,7 @@
   <h1 class="title">{{"common.contests" | translate}}</h1>
   <ion-list lines="none">
     <ion-item *ngFor="let contest of contests" lines="none">
-      <app-contest></app-contest>
+      <app-contest [contest]="contest"></app-contest>
     </ion-item>
   </ion-list>
 </ion-content>

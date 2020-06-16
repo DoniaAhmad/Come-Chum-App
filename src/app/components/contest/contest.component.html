@@ -1,7 +1,7 @@
-<ion-card class="blog">
-  <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
+<ion-card class="blog" *ngIf="contest">
+  <img src="{{contest.image}}" />
   <ion-card-header>
-    <ion-card-title>Come To Egypt</ion-card-title>
+    <ion-card-title>{{contest.name}}</ion-card-title>
   </ion-card-header>
   <ion-grid>
     <ion-row>

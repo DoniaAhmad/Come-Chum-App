@@ -32,7 +32,7 @@
             </ion-col>
             <ion-slides [options]="slideOpts" class="blogs">
                 <ion-slide *ngFor="let blog of trendingBlogs">
-                    <app-blog></app-blog>
+                    <app-blog [blog]="blog"></app-blog>
                 </ion-slide>
             </ion-slides>
             <!-- end trending blogs -->
@@ -40,7 +40,7 @@
         <ion-row>
             <ion-list lines="none" class="posts">
                 <ion-item class="post" *ngFor="let post of feed;let i = index" (click)="openPost(i)">
-                    <app-post></app-post>
+                    <app-post [post]="post" style="width: 100%;"></app-post>
                 </ion-item>
             </ion-list>
         </ion-row>

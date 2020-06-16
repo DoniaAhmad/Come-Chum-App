@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   host : 'https://chumtravel.herokuapp.com/',
-  api : 'http://localhost:4200/api/',
+  api : 'https://chumtravel.herokuapp.com/api/',
+  // api : 'http://localhost:4200/api/',
   firebase : {
     google : {
       token : '980062097702-fg2a1hlkrgll55icqd93661hlbo5p811.apps.googleusercontent.com',

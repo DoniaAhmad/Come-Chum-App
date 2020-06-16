@@ -1,11 +1,11 @@
-<ion-card class="post">
+<ion-card class="post" *ngIf="post">
   <ion-grid>
     <ion-row>
       <ion-col size="2">
-        <img class="post-profile-picture" src="https://i.pinimg.com/originals/2e/2f/ac/2e2fac9d4a392456e511345021592dd2.jpg" />
+        <img class="post-profile-picture" src="{{post.image}}" />
       </ion-col>
       <ion-col size="4">
-        <p class="post-user-name">Sam Martin</p>
+        <p class="post-user-name">{{post.name}}</p>
         <span class="post-time">5 min</span>
       </ion-col>
       <ion-col size="2" offset="4">
@@ -13,19 +13,23 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <p class="post-text">{{text}}</p>
-  <ion-card-header>
-    <img class="post-image"  src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
+  <p class="post-text">{{post.body}}</p>
+  <ion-card-header *ngIf="post.images.length > 0">
+    <ion-slides *ngFor="let image of post.images">
+      <ion-slide>
+        <img class="post-image"  src="{{image}}" />
+      </ion-slide>
+    </ion-slides>
   </ion-card-header>
   <ion-grid>
     <ion-row>
       <ion-col size="3">
         <i class="material-icons">favorite_border</i>
-        <span class="post-numbers">1500</span>
+        <span class="post-numbers">{{post.likes}}</span>
       </ion-col>
       <ion-col size="3" offset="1">
         <i class="material-icons">chat_bubble_outline</i>
-        <span class="post-numbers">249</span>
+        <span class="post-numbers">{{post.comments}}</span>
       </ion-col>
     </ion-row>
   </ion-grid>

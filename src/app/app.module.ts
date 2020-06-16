@@ -12,6 +12,9 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { UserService } from './services/user.service';
 import { BlogsService } from './services/blogs.service';
 import { FeedService } from './services/feed.service';
+import { GroupsService } from './services/groups.service';
+import { EventsService } from './services/events.service';
+import { ContestsService } from './services/contests.service';
 import { CommonModule } from '@angular/common';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
@@ -55,6 +58,9 @@ export function createTranslateLoader(http: HttpClient) {
     BlogsService,
     FeedService,
     AuthService,
+    GroupsService,
+    ContestsService,
+    EventsService,
     DatePicker,
     InAppBrowser,
     FirebaseAuthentication,

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -7,11 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
-  public images = [];
-  public text = 'hello everyone, that is my first post.';
+  @Input() post;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      if (params['post']) {
+        this.post = JSON.parse(params['post']);
+      }
+    });
+  }
 
 }

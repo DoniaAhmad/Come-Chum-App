@@ -2,7 +2,7 @@
   <h1 class="title">{{"common.blogs" | translate}}</h1>
   <ion-list lines="none">
     <ion-item *ngFor="let blog of blogs" lines="none">
-      <app-blog></app-blog>
+      <app-blog [blog]="blog"></app-blog>
     </ion-item>
   </ion-list>
 </ion-content>

@@ -54,6 +54,7 @@ export class LoginPage implements OnInit {
           localStorage.setItem('language', 'en');
           this.email = '';
           this.password = '';
+          this.userService.setData(data);
           this.router.navigate(['tabs']);
         } else {
           alert(this.wrongTranslation);

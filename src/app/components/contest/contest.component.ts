@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contest',
@@ -7,8 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContestComponent implements OnInit {
 
-  constructor() { }
+  @Input() contest;
 
-  ngOnInit() {}
+  constructor(
+    private route: ActivatedRoute
+  ) { }
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      if (params['contest']) {
+        this.contest = JSON.parse(params['contest']);
+      }
+    });
+  }
 
 }
