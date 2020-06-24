@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,14 +10,16 @@ export class UserService {
 
   private userData;
 
-  constructor(public httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router) { }
 
   isAuthenticated() {
     return localStorage.getItem('user') != null;
   }
 
   getData() {
-    return localStorage.getItem('user');
+    return JSON.parse(localStorage.getItem('user'));
   }
 
   setData(data) {
@@ -28,6 +31,11 @@ export class UserService {
       email,
       password
     });
+  }
+
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['login']);
   }
 
   register(data) {

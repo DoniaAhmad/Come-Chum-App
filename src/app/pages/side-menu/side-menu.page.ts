@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-side-menu',
   templateUrl: './side-menu.page.html',
@@ -8,19 +7,20 @@ import { Router } from '@angular/router';
 })
 export class SideMenuPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+    private navCtrl: NavController) { }
 
   ngOnInit() {
   }
 
   navigate(url) {
-    this.router.navigate([url]);
+    this.navCtrl.navigateForward(url);
   }
 
   logout() {
     localStorage.removeItem('user');
     localStorage.removeItem('language');
-    this.router.navigate(['/login']);
+    this.navCtrl.navigateRoot('login');
   }
 
 }

@@ -14,7 +14,7 @@
 
   <ion-slides class="images" [options]="slideOpts">
     <ion-slide>
-      <div class="upload" [ngStyle]="{'width': images.length == 0 ?  '90%' : '100%'}">
+      <div class="upload" [ngStyle]="{'width': images.length == 0 ?  '90%' : '100%'}" (click)="upload()">
         <ion-icon class="icon" name="add-circle-outline"></ion-icon>
       </div>
     </ion-slide>

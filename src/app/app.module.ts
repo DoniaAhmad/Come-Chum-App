@@ -26,6 +26,10 @@ import { environment } from '../environments/environment';
 import { Facebook } from '@ionic-native/facebook/ngx';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
+import { NotificationsService } from './services/notifications.service';
+import { ChatService } from './services/chat.service';
+import { PackageService } from './services/package.service';
+import { Chooser } from '@ionic-native/chooser/ngx';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -61,12 +65,16 @@ export function createTranslateLoader(http: HttpClient) {
     GroupsService,
     ContestsService,
     EventsService,
+    NotificationsService,
+    ChatService,
+    PackageService,
     DatePicker,
     InAppBrowser,
     FirebaseAuthentication,
     Facebook,
     GooglePlus,
     ImagePicker,
+    Chooser,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -6,9 +6,9 @@
           <ion-icon class="back" name="chevron-back-outline" (click)="back()"></ion-icon>
         </ion-col>
         <ion-col size="7" class="center">
-          <span class="name">Janet Fowler</span>
+          <span class="name">{{chat ? chat.name : ''}}</span>
           <br>
-          <span class="status">{{online ? 'Online Now' : 'Offline Now'}}</span>
+          <span class="status">{{chat && chat.online ? 'Online Now' : 'Offline Now'}}</span>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -19,7 +19,7 @@
     <ion-item *ngFor="let message of messages" slot="start">
       <div class="full-width">
         <div class="bubble"  [ngClass]="{'sender': message.sender_id == userId , 'reciver': message.sender_id != userId}">
-          <p>{{message.text}}</p>
+          <p>{{message.data}}</p>
         </div>
       </div>
     </ion-item>
@@ -29,7 +29,7 @@
 </ion-content>
 
 <ion-footer>
-  <ion-input class="input" placeholder="Type your message"></ion-input>
-  <ion-icon class="input-icon" name="camera-outline"></ion-icon>
-  <ion-icon class="input-icon icon2" name="mic-outline"></ion-icon>
+  <ion-input class="input" placeholder="Type your message" [(ngModel)]="text" (keyup.enter)="send()"></ion-input>
+  <ion-icon class="input-icon" name="camera-outline" (click)="uploadImage()"></ion-icon>
+  <ion-icon class="input-icon icon2" name="mic-outline" (click)="uploadVoice()"></ion-icon>
 </ion-footer>

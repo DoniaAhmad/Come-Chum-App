@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Platform, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
@@ -31,10 +32,18 @@ export class TabsPage implements OnInit {
     router : 'notifications'
   }];
 
-  constructor(public router: Router) {
+  constructor(
+    private navCtrl: NavController,
+    public router: Router,
+    private platform: Platform) {
   }
 
   ngOnInit() {
+    this.platform.ready().then(() => {
+      this.platform.backButton.subscribe(async () => {
+        this.navCtrl.navigateRoot('/tabs/home');
+      });
+    });
   }
 
 }

@@ -50,7 +50,7 @@ export class LoginPage implements OnInit {
         loading.dismiss();
         console.log(data);
         if (data['status'] === 'success') {
-          localStorage.setItem('user', data.toString());
+          localStorage.setItem('user', JSON.stringify(data));
           localStorage.setItem('language', 'en');
           this.email = '';
           this.password = '';

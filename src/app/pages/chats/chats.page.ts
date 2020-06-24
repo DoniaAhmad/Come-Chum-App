@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
+import { ChatService } from 'src/app/services/chat.service';
+import { UserService } from 'src/app/services/user.service';
+
 
 @Component({
   selector: 'app-chats',
@@ -9,42 +12,33 @@ import { Router } from '@angular/router';
 export class ChatsPage implements OnInit {
 
   public chats = [];
+  private page = 1;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private chatService: ChatService,
+    private user: UserService) { }
 
   ngOnInit() {
     this.getChats();
   }
 
   getChats() {
-    this.chats = [
-      {
-        image : 'https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-        name : 'Apollo Phelps',
-        body : 'liked your post',
-        time : '5:30PM',
-        online : true,
-        unread : true
-      }, {
-        image : 'https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-        name : 'Cocon Gordon',
-        body : 'commented on your post',
-        time : '7:35AM',
-        online : false,
-        unread : true
-      }, {
-        image : 'https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-        name : 'Leo Reilly',
-        body : 'liked your post',
-        time : 'yesterday',
-        online : false,
-        unread : false
-      }
-    ];
+    this.chatService.getChats(this.user.getData()['id'], this.page).subscribe(data => {
+      console.log(data);
+      this.chats = data as Array<any>;
+      this.page++;
+    });
   }
 
   openChat(index) {
-    this.router.navigate(['/messages']);
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        chat: JSON.stringify(this.chats[index]),
+        userId: this.user.getData()['id']
+      }
+    };
+    this.router.navigate(['/messages'], navigationExtras);
   }
 
 }
