@@ -19,9 +19,11 @@ export class AppComponent {
   ) {
     this.initializeApp();
     if (localStorage.getItem('language')) {
-      translate.setDefaultLang(localStorage.getItem('language'));
+      this.translate.setDefaultLang(localStorage.getItem('language'));
+      this.translate.use(localStorage.getItem('language'));
     } else {
-      translate.setDefaultLang('en');
+      this.translate.setDefaultLang('en');
+      this.translate.use('en');
     }
   }
 

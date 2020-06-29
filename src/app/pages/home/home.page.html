@@ -22,14 +22,16 @@
             </ion-searchbar>
             <!-- end search bar -->
         </ion-row>
+        <ion-row [ngStyle]="{'direction': translate.currentLang == 'ar' ? 'rtl' : 'ltr'}">
+            <ion-col size="6">
+                <p>{{'common.trending_blogs' | translate}}</p>
+            </ion-col>
+            <ion-col size="6">
+                <p class="see-all" [ngStyle]="{'text-align': translate.currentLang == 'ar' ? 'left' : 'right'}" routerLink="/tabs/blogs" >{{'common.see_all' | translate}}</p>
+            </ion-col>
+        </ion-row>
         <ion-row>
             <!-- trending blogs -->
-            <ion-col size="6">
-                <p>Trending Blogs</p>
-            </ion-col>
-            <ion-col size="6">
-                <p class="see-all" routerLink="/tabs/blogs" >See all</p>
-            </ion-col>
             <ion-slides [options]="slideOpts" class="blogs">
                 <ion-slide *ngFor="let blog of trendingBlogs">
                     <app-blog [blog]="blog"></app-blog>

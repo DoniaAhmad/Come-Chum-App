@@ -1,32 +1,26 @@
 <ion-content>
   <h1 class="title">{{"common.packages" | translate}}</h1>
   <ion-slides class="packages" [options]="slideOpts">
-    <ion-slide class="package" *ngFor="let package of packages">
+    <ion-slide class="package" *ngFor="let package of packages; let i = index;" (click)="select(i)">
       <div>
         <img class="package-img" src="../../../assets/imgs/crown-white.png" />
-        <p class="package-name">Package A</p>
+        <p class="package-name">{{package.name}}</p>
       </div>
     </ion-slide>
   </ion-slides>
 
   <div class="package-details">
     <img class="package-img-details" src="../../../assets/imgs/crown.png" />
-    <p class="package-name-details">Package A</p>
+    <p class="package-name-details">{{packages.length > 0? packages[seletedIndex].name : ''}}</p>
     <ion-list lines="none" class="packages-list">
-      <ion-item>
-        <p>1-5 Active Events</p>
-      </ion-item>
-      <ion-item>
-        <p>30 Day Trial</p>
-      </ion-item>
-      <ion-item>
-        <p>No Booking fees</p>
+      <ion-item *ngFor="let item of details_selected">
+        <p>{{item}}</p>
       </ion-item>
     </ion-list>
     <ion-button>{{"packages.pay" | translate}}</ion-button>
   </div>
 
-  <p class="package-cost">{{'packages.total' | translate}} : {{cost}} USD</p>
+  <p class="package-cost">{{'packages.month' | translate}} : {{packages.length > 0? packages[seletedIndex].price_month : ''}} USD / {{'packages.year' | translate}} : {{packages.length > 0? packages[seletedIndex].price_year : ''}} USD</p>
   
 
 </ion-content>

@@ -10,11 +10,11 @@
           </ion-col>
           <ion-col size="8">
             <p class="name">{{chat.name}}</p>
-            <span class="body">{{chat.data}}</span>
+            <span class="body">{{chat.last_message}}</span>
           </ion-col>
           <ion-col size="2">
             <div class="time-unread">
-              <span class="time">{{chat.time}}</span>
+              <span class="time">{{chat.last_message_created_at | timeAgo}}</span>
               <div *ngIf="chat.unread" class="unread"></div>
             </div>
           </ion-col>

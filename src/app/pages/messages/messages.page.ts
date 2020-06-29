@@ -25,20 +25,21 @@ export class MessagesPage implements OnInit {
     private chatService: ChatService,
     private imagePicker: ImagePicker,
     private chooser: Chooser) {
+  }
+
+  ngOnInit() {
     this.route.queryParams.subscribe(params => {
       if (params) {
         this.userId = params.userId;
         this.chat = JSON.parse(params.chat);
+        this.getMessages();
       }
     });
   }
 
-  ngOnInit() {
-    this.getMessages();
-  }
-
   getMessages() {
-    this.chatService.getMessages(this.chat.chat_id, this.page).subscribe( data => {
+    console.log(this.chat.id);
+    this.chatService.getMessages(this.chat.id, this.page).subscribe( data => {
       console.log(data);
       this.messages = data as Array<any>;
     });

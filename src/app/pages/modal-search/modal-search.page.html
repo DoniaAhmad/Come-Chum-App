@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content [ngStyle]="{'direction': translate.currentLang == 'ar' ? 'rtl' : 'ltr'}">
   <ion-icon class="close" name="close-outline" (click)="close()"></ion-icon>
   <h1 class="title">{{'search.filter' | translate}}</h1>
   <ion-list>
@@ -19,19 +19,16 @@
         <ion-col size="6">
           <ion-item>
             <ion-label class="deleted">{{'common.country' | translate}}</ion-label>
-            <ion-select placeholder="Country" class="select-list" (ionChange)="getCities($event.target.value)" [(ngModel)]="country">
-              <ion-select-option value="0">Egypt</ion-select-option>
-              <ion-select-option value="1">KSA</ion-select-option>
-              <ion-select-option value="2">UAE</ion-select-option>
+            <ion-select placeholder="{{'common.country' | translate}}" class="select-list" (ionChange)="getCities($event.target.value)" [(ngModel)]="country">
+              <ion-select-option value="{{country.id}}" *ngFor="let country of countries">{{translate.currentLang == 'ar' ? country.name_ar : country.name_en}}</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-col>
         <ion-col size="6">
           <ion-item>
             <ion-label class="deleted">{{'common.city' | translate}}</ion-label>
-            <ion-select placeholder="City" class="select-list" [(ngModel)]="city">
-              <ion-select-option value="0">Cairo</ion-select-option>
-              <ion-select-option value="1">Alexandria</ion-select-option>
+            <ion-select placeholder="{{'common.city' | translate}}" class="select-list" [(ngModel)]="city">
+              <ion-select-option value="{{city.id}}" *ngFor="let city of cities">{{translate.currentLang == 'ar' ? city.name_ar : city.name_en}}</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-col>
@@ -40,7 +37,7 @@
         <ion-col size="6">
           <ion-item>
             <ion-label class="deleted">{{'common.travellers' | translate}}</ion-label>
-            <ion-select placeholder="No.Travellers" class="select-list" [(ngModel)]="travellers">
+            <ion-select placeholder="{{'common.travellers' | translate}}" class="select-list" [(ngModel)]="travellers">
               <ion-select-option value="1">1</ion-select-option>
               <ion-select-option value="2">2</ion-select-option>
               <ion-select-option value="3">3</ion-select-option>
@@ -55,6 +52,9 @@
         <div>
           <span *ngFor="let interest of interests; let i = index" class="interest" (click)="select(i)" [ngClass]="{'active': interestsIndeces[i]}">
             {{translate.currentLang == 'ar' ? interest.name_ar : interest.name_en}}
+          </span>
+          <span class="interest" (click)="getInterests()">
+            {{'common.more' | translate}}
           </span>
         </div>
       </ion-row>

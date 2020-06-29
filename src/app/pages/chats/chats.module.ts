@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { ChatsPageRoutingModule } from './chats-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { ChatsPage } from './chats.page';
+import { TimeAgoPipe } from 'src/app/pipes/time-ago.pipe';
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import { ChatsPage } from './chats.page';
     ChatsPageRoutingModule,
     TranslateModule
   ],
-  declarations: [ChatsPage]
+  declarations: [ChatsPage, TimeAgoPipe]
 })
 export class ChatsPageModule {}

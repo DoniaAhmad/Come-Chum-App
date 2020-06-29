@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
+import { InterestsService } from 'src/app/services/interests.service';
+import { LocationsService } from 'src/app/services/locations.service';
 
 @Component({
   selector: 'app-modal-search',
@@ -11,41 +13,48 @@ export class ModalSearchPage implements OnInit {
 
   public interests = [];
   public interestsIndeces = [];
+  public countries = [];
+  public cities = [];
   public from;
   public to;
   public country;
   public city;
   public travellers;
+  private page = 1;
 
   constructor(
     private modalCtrl: ModalController,
-    private translate: TranslateService) {
+    private translate: TranslateService,
+    private interestsService: InterestsService,
+    private locationsService: LocationsService) {
     this.getInterests();
-    console.log(this.interests);
+    this.getCountries();
   }
 
   ngOnInit() {
   }
 
   getInterests() {
-    this.interests = [{
-      name_ar : 'رياضة',
-      name_en : 'Sport'
-    }, {
-      name_ar : 'اقتصاد',
-      name_en : 'Politics'
-    }, {
-      name_ar : 'كرة القدم',
-      name_en : 'Football'
-    }, {
-      name_ar : 'قراءة',
-      name_en : 'Reading'
-    }];
-    this.interestsIndeces = new Array<boolean>(this.interests.length).fill(false);
+    this.interestsService.getInterests(this.page).subscribe( data => {
+      console.log(data);
+      this.interests = data as Array<any>;
+      this.interestsIndeces = new Array<boolean>(this.interests.length).fill(false);
+      this.page++;
+    });
+  }
+
+  getCountries(){
+    this.locationsService.getCountries(this.translate.currentLang).subscribe( data => {
+      this.countries = data as Array<any>;
+      console.log(data);
+    });
   }
 
   getCities(countryId) {
-    console.log(countryId);
+    this.locationsService.getCities(countryId, this.translate.currentLang).subscribe( data => {
+      this.cities = data as Array<any>;
+      console.log(data);
+    });
   }
 
   search() {

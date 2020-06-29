@@ -30,6 +30,12 @@ import { NotificationsService } from './services/notifications.service';
 import { ChatService } from './services/chat.service';
 import { PackageService } from './services/package.service';
 import { Chooser } from '@ionic-native/chooser/ngx';
+import { InterestsService } from './services/interests.service';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { LocationsService } from './services/locations.service';
+
+
+const config: SocketIoConfig = { url: 'https://chumtravel.herokuapp.com/', options: {} };
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -47,6 +53,7 @@ export function createTranslateLoader(http: HttpClient) {
     CommonModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+    SocketIoModule.forRoot(config),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -66,8 +73,10 @@ export function createTranslateLoader(http: HttpClient) {
     ContestsService,
     EventsService,
     NotificationsService,
+    InterestsService,
     ChatService,
     PackageService,
+    LocationsService,
     DatePicker,
     InAppBrowser,
     FirebaseAuthentication,

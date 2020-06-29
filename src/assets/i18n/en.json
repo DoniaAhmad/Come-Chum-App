@@ -35,7 +35,11 @@
         "profile" : "My Profile",
         "packages" : "Packages",
         "edit_profile" : "Edit Profile",
-        "wrong_data" : "Wrong data , please check again"
+        "wrong_data" : "Wrong data , please check again",
+        "more" : "more",
+        "see_all" : "See all",
+        "trending_blogs" : "Trending Blogs",
+        "logout" : "Logout"
     },
     "info" : {
         "slide1_title" : "Search for the right place",
@@ -83,6 +87,8 @@
     },
     "packages" : {
         "pay" : "Pay",
-        "total" : "Total"
+        "total" : "Total",
+        "month" : "Monthly",
+        "year" : "Annually"
     }
 }

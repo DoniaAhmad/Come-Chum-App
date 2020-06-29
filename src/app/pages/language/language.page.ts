@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-language',
@@ -8,13 +9,17 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LanguagePage implements OnInit {
 
-  constructor(private translate: TranslateService) { }
+  constructor(
+    private translate: TranslateService,
+    private navController: NavController) { }
 
   ngOnInit() {
   }
 
   change(lang) {
     this.translate.use(lang);
+    localStorage.setItem('language', lang);
+    this.navController.back();
   }
 
 }

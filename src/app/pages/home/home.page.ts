@@ -5,6 +5,8 @@ import { ModalController } from '@ionic/angular';
 import { ModalSearchPage } from '../modal-search/modal-search.page';
 import { MenuController, NavController } from '@ionic/angular';
 import { Router, NavigationExtras } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -30,10 +32,13 @@ export class HomePage {
     private modalController: ModalController,
     private menu: MenuController,
     private router: Router,
-    private navCtrl: NavController) {
+    private navCtrl: NavController,
+    private userService: UserService,
+    public translate: TranslateService) {
       this.menu.enable(true, 'first');
       this.getFeed();
       this.getTrendingBlogs();
+      this.userService.heartBeatOnline();
     }
 
   getTrendingBlogs() {
