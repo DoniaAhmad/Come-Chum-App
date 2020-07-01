@@ -19,10 +19,12 @@
     </ion-list>
   </div>
 
+  <p class="center" (click)="getComments()">{{'common.more' | translate}}</p>
+
   <div class="comment-container">
-    <ion-input class="input" placeholder="Type your comment"></ion-input>
-    <ion-icon class="input-icon" name="camera-outline"></ion-icon>
-    <ion-icon class="input-icon icon2" name="send-outline"></ion-icon>
+    <ion-input class="input" placeholder="Type your comment" [(ngModel)]="text"></ion-input>
+    <ion-icon class="input-icon" name="camera-outline" (click)="upload()"></ion-icon>
+    <ion-icon class="input-icon icon2" name="send-outline" (click)="send()"></ion-icon>
   </div>
 
 </ion-content>

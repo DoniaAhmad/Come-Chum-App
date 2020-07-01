@@ -15,7 +15,7 @@
   </div>
 </ion-header>
 
-<ion-content>
+<ion-content #content (ionScroll)="onScroll($event)" [scrollEvents]="true">
   <ion-list lines="none">
     <ion-item *ngFor="let message of messages" slot="start">
       <div class="full-width">

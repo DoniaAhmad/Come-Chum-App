@@ -25,4 +25,34 @@ export class FeedService {
   getPost(userId, blogId) {
     return this.httpClient.get(`${environment.api}feed/blog/${userId}/${blogId}`);
   }
+
+  like(data) {
+    return this.httpClient.post(`${environment.api}feed/like`,
+    data);
+  }
+
+  dislike(data) {
+    return this.httpClient.post(`${environment.api}feed/dislike`,
+    data);
+  }
+
+  create_comment(data) {
+    return this.httpClient.post(`${environment.api}feed/create_comment`,
+    data);
+  }
+
+  load_comment(postId, pageId) {
+    return this.httpClient.get(`${environment.api}feed/load_comments/${postId}/${pageId}`);
+  }
+
+  update(data) {
+    return this.httpClient.post(`${environment.api}feed/update`,
+    data);
+  }
+
+  remove(data) {
+    return this.httpClient.post(`${environment.api}feed/remove`,
+    data);
+  }
+
 }

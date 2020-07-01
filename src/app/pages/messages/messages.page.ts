@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
+import { Router, ActivatedRoute, Scroll } from '@angular/router';
 import { ChatService } from 'src/app/services/chat.service';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { Chooser } from '@ionic-native/chooser/ngx';
+import { Socket } from 'ngx-socket-io';
+import { Content } from '@angular/compiler/src/render3/r3_ast';
 
 @Component({
   selector: 'app-messages',
   templateUrl: './messages.page.html',
   styleUrls: ['./messages.page.scss'],
 })
-export class MessagesPage implements OnInit {
+export class MessagesPage implements OnInit, AfterViewChecked {
+
+  @ViewChild('content') content: any;
 
   public online = true;
   public messages = [];
@@ -17,6 +21,9 @@ export class MessagesPage implements OnInit {
   public chat;
   private page = 1;
   public text = '';
+  private flag = true;
+  private hasMore = true;
+  private apiCall = true;
 
 
   constructor(
@@ -24,7 +31,12 @@ export class MessagesPage implements OnInit {
     private route: ActivatedRoute,
     private chatService: ChatService,
     private imagePicker: ImagePicker,
-    private chooser: Chooser) {
+    private chooser: Chooser,
+    private socket: Socket) {
+  }
+
+  ngAfterViewChecked(): void {
+    this.scrollToBottom();
   }
 
   ngOnInit() {
@@ -33,7 +45,19 @@ export class MessagesPage implements OnInit {
         this.userId = params.userId;
         this.chat = JSON.parse(params.chat);
         this.getMessages();
+        this.getNotifiedMessages();
       }
+    });
+  }
+
+  getNotifiedMessages() {
+    this.socket.fromEvent(`chat${this.chat.id}`).subscribe( data => {
+      console.log(data);
+      this.messages.push({
+        data : data['data'],
+        type : data['type'],
+        sender_id : data['userId']
+      });
     });
   }
 
@@ -41,18 +65,14 @@ export class MessagesPage implements OnInit {
     console.log(this.chat.id);
     this.chatService.getMessages(this.chat.id, this.page).subscribe( data => {
       console.log(data);
-      this.messages = data as Array<any>;
+      if ((data as Array<any>).length === 0) {
+        this.hasMore = false;
+      }
+      this.messages = (data as Array<any>).concat(this.messages);
+      this.apiCall = true;
+      this.page++;
+      this.scrollToBottom();
     });
-    this.messages = [{
-      text : 'hello',
-      sender_id : 1
-    }, {
-      text : 'hi , how are you ?',
-      sender_id : 2
-    }, {
-      text : 'i am fine thank you',
-      sender_id : 1
-    }];
   }
 
   send() {
@@ -60,11 +80,11 @@ export class MessagesPage implements OnInit {
       this.chatService.send({
         data : this.text,
         type : 0,
-        chatId : this.chat.chat_id,
+        chatId : this.chat.id,
         userId : this.userId
       }).subscribe( data => {
         this.messages.push({
-          chat_id : this.chat.chat_id,
+          chat_id : this.chat.id,
           data : this.text,
           seen : 0,
           sender_id: this.userId,
@@ -91,6 +111,23 @@ export class MessagesPage implements OnInit {
 
   back() {
     this.router.navigate(['/tabs/chat']);
+  }
+
+  scrollToBottom() {
+    if (this.flag) {
+      this.content.scrollToBottom(300);
+    }
+  }
+
+  onScroll(event) {
+    this.flag = false;
+    if (event.detail.scrollTop < 10) {
+      if (this.apiCall && this.hasMore) {
+        this.apiCall = false;
+        this.getMessages();
+        console.log('call api');
+      }
+    }
   }
 
 }

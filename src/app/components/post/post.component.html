@@ -13,8 +13,8 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <p class="post-text">{{post.body}}</p>
-  <ion-card-header *ngIf="post.images.length > 0">
+  <p class="post-text" (click)="openPost()">{{post.body}}</p>
+  <ion-card-header *ngIf="post.images.length > 0" (click)="openPost()">
     <ion-slides *ngFor="let image of post.images">
       <ion-slide>
         <img class="post-image"  src="{{image}}" />
@@ -24,13 +24,13 @@
   <ion-grid>
     <ion-row>
       <ion-col size="3">
-        <i class="material-icons" *ngIf="!post.isliked">favorite_border</i>
-        <i class="material-icons liked" *ngIf="post.isliked">favorite</i>
+        <i class="material-icons" *ngIf="!post.isliked" (click)="toggleLike()">favorite_border</i>
+        <i class="material-icons liked" *ngIf="post.isliked" (click)="toggleLike()">favorite</i>
         <span class="post-numbers">{{post.likes}}</span>
       </ion-col>
       <ion-col size="3" offset="1">
-        <i class="material-icons">chat_bubble_outline</i>
-        <span class="post-numbers">{{post.comments}}</span>
+        <i class="material-icons" (click)="openPost()">chat_bubble_outline</i>
+        <span class="post-numbers" (click)="openPost()">{{post.comments}}</span>
       </ion-col>
     </ion-row>
   </ion-grid>

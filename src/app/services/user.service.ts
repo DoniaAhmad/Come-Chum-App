@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { Socket } from 'ngx-socket-io';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +16,8 @@ export class UserService {
   constructor(
     private httpClient: HttpClient,
     private router: Router,
-    private socket: Socket) { }
+    private socket: Socket,
+    private localNotifications: LocalNotifications) { }
 
   isAuthenticated() {
     return localStorage.getItem('user') != null;
@@ -50,6 +53,21 @@ export class UserService {
   forget(email) {
     return this.httpClient.post(`${environment.api}users/forget`, {
       email
+    });
+  }
+
+  getNotifications() {
+    console.log(`user${this.getData().id}`);
+    this.socket.fromEvent(`user${this.getData().id}`).subscribe( data => {
+      console.log(data);
+      this.localNotifications.schedule({
+        id: 1000,
+        text: data['text'],
+        sound: 'file://sound.mp3'
+        // title: ''
+        // icon: 'http://example.com/icon.png'
+        // data: { secret: key }
+      });
     });
   }
 

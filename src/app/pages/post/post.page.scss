@@ -37,7 +37,8 @@ ion-content{
 }
 
 .comments-container{
-    max-height: 23%;
+    max-height: 50%;
+    overflow-y: scroll;
     .comments-list{
         height: 100%;
         border-radius: 25px;
@@ -54,4 +55,8 @@ ion-content{
     .comment{
         font-size: 0.7em;
     }
+}
+
+.center{
+    text-align: center;
 }

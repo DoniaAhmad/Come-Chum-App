@@ -33,9 +33,9 @@ import { Chooser } from '@ionic-native/chooser/ngx';
 import { InterestsService } from './services/interests.service';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { LocationsService } from './services/locations.service';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
-
-const config: SocketIoConfig = { url: 'https://chumtravel.herokuapp.com/', options: {} };
+const config: SocketIoConfig = { url: environment.host, options: {} };
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -84,6 +84,7 @@ export function createTranslateLoader(http: HttpClient) {
     GooglePlus,
     ImagePicker,
     Chooser,
+    LocalNotifications,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

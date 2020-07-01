@@ -39,6 +39,7 @@ export class HomePage {
       this.getFeed();
       this.getTrendingBlogs();
       this.userService.heartBeatOnline();
+      this.userService.getNotifications();
     }
 
   getTrendingBlogs() {
