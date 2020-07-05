@@ -17,7 +17,7 @@
   <ion-card-header *ngIf="post.images.length > 0" (click)="openPost()">
     <ion-slides *ngFor="let image of post.images">
       <ion-slide>
-        <img class="post-image"  src="{{image}}" />
+        <img class="post-image"  src="{{image.path}}" />
       </ion-slide>
     </ion-slides>
   </ion-card-header>

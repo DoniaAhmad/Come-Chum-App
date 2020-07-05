@@ -14,6 +14,10 @@ export class FeedService {
     data);
   }
 
+  getMyFeed(userId, pageId) {
+    return this.httpClient.get(`${environment.api}feed/my/${userId}/${pageId}`);
+  }
+
   getFeed(userId, pageId) {
     return this.httpClient.get(`${environment.api}feed/all/${userId}/${pageId}`);
   }
