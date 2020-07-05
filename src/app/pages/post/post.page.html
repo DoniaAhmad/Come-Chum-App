@@ -19,7 +19,7 @@
     </ion-list>
   </div>
 
-  <p class="center" (click)="getComments()" *ngIf="comments.length != 0">{{'common.more' | translate}}</p>
+  <p class="center" (click)="getComments()" *ngIf="comments.length != 0 && comments.length != post.comments">{{'common.more' | translate}}</p>
 
   <div class="comment-container">
     <ion-input class="input" placeholder="Type your comment" [(ngModel)]="text"></ion-input>
