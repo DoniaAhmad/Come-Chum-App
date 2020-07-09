@@ -1,19 +1,19 @@
-<ion-content>
+<ion-content [ngStyle]="{'direction': translate.currentLang == 'ar' ? 'rtl' : 'ltr'}">
   <h1 class="title">{{"common.events" | translate}}</h1>
-  <p class="subtitle">Find more events</p>
+  <p class="subtitle">{{"events.find_more_events" | translate}}</p>
   <ion-grid>
     <ion-row>
       <ion-col size="3">
-        <p class="search" [ngClass]="{'active': searchType == 0}" (click)="searchDate(0)">This week</p> 
+        <p class="search" [ngClass]="{'active': searchType == 0}" (click)="searchDate(0)">{{"events.this_week" | translate}}</p> 
       </ion-col>
       <ion-col size="3">
-        <p class="search" [ngClass]="{'active': searchType == 1}" (click)="searchDate(1)">This month</p> 
+        <p class="search" [ngClass]="{'active': searchType == 1}" (click)="searchDate(1)">{{"events.this_month" | translate}}</p> 
       </ion-col>
       <ion-col size="3">
-        <p class="search" [ngClass]="{'active': searchType == 2}" (click)="searchDate(2)">This year</p> 
+        <p class="search" [ngClass]="{'active': searchType == 2}" (click)="searchDate(2)">{{"events.this_year" | translate}}</p> 
       </ion-col>
       <ion-col size="3">
-        <p class="search" [ngClass]="{'active': searchType == 3}" (click)="searchDate(3)">Custom</p>
+        <p class="search" [ngClass]="{'active': searchType == 3}" (click)="searchDate(3)">{{"events.custom" | translate}}</p>
       </ion-col>
     </ion-row>
   </ion-grid>

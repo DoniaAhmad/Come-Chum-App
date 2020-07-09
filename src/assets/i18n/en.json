@@ -39,7 +39,9 @@
         "more" : "more",
         "see_all" : "See all",
         "trending_blogs" : "Trending Blogs",
-        "logout" : "Logout"
+        "logout" : "Logout",
+        "view": "View",
+        "views":"Views"
     },
     "info" : {
         "slide1_title" : "Search for the right place",
@@ -90,5 +92,13 @@
         "total" : "Total",
         "month" : "Monthly",
         "year" : "Annually"
-    }
+    },
+    "events" : {
+        "find_more_events" : "Find more events",
+        "this_week" : "This week",
+        "this_month" : "This month",
+        "this_year": "This year",
+        "custom" : "Custom"
+    },
+    "send_message_to_you" : "sent a message to you"
 }

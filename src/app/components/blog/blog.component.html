@@ -6,10 +6,10 @@
   <ion-grid>
     <ion-row>
       <ion-col size="6" class="ion-align-self-start">
-        <span>{{blog.seen}} views</span>
+        <span>{{blog.seen}} {{'common.views' | translate}}</span>
       </ion-col>
-      <ion-col size="6" class="ion-align-self-end right">
-        <ion-button shape="round">View</ion-button>
+      <ion-col size="6" class="ion-align-self-end" [ngClass]="{'right': translate.currentLang == 'en', 'left': translate.currentLang == 'ar'}">
+        <ion-button shape="round">{{'common.view' | translate}}</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -32,3 +32,10 @@
 .swiper-pagination-bullets {
     bottom: -50px !important;
 }
+h2,h3,h4,h5,h6,p,span,ion-button{
+    font-family: var(--font-family-base) !important;
+}
+
+h1,.title{
+    font-family: var(--font-family-bold) !important;
+}

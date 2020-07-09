@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogsService } from 'src/app/services/blogs.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-blogs',
@@ -11,7 +12,10 @@ export class BlogsPage implements OnInit {
   public blogs = [];
   private page = 1;
 
-  constructor(private blogsService: BlogsService) { }
+  constructor(
+    private blogsService: BlogsService,
+    public translate: TranslateService
+    ) { }
 
   ngOnInit() {
     this.getBlogs();

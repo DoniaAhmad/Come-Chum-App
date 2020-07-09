@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { ChatService } from 'src/app/services/chat.service';
 import { UserService } from 'src/app/services/user.service';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -17,7 +18,8 @@ export class ChatsPage implements OnInit {
   constructor(
     private router: Router,
     private chatService: ChatService,
-    private user: UserService) { }
+    private user: UserService,
+    public translate: TranslateService) { }
 
   ngOnInit() {
     this.getChats();

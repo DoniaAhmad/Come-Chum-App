@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
 import { EventsService } from 'src/app/services/events.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-events',
@@ -15,7 +16,8 @@ export class EventsPage implements OnInit {
 
   constructor(
     private datePicker: DatePicker,
-    private eventsService: EventsService
+    private eventsService: EventsService,
+    public translate: TranslateService
   ) { }
 
   ngOnInit() {
