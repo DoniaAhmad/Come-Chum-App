@@ -41,7 +41,11 @@
         "trending_blogs" : "Trending Blogs",
         "logout" : "Logout",
         "view": "View",
-        "views":"Views"
+        "views":"Views",
+        "post":"Post",
+        "blog":"Blog",
+        "group":"Group",
+        "event":"Event"
     },
     "info" : {
         "slide1_title" : "Search for the right place",

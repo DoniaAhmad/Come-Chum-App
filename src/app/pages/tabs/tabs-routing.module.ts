@@ -9,6 +9,7 @@ import { GroupsPage } from '../groups/groups.page';
 import { EventsPage } from '../events/events.page';
 import { BlogsPage } from '../blogs/blogs.page';
 import { CreatePostPage } from '../create-post/create-post.page';
+import { CreatePage } from '../create/create.page';
 
 
 const routes: Routes = [
@@ -36,6 +37,10 @@ const routes: Routes = [
       {
         path: 'blogs',
         component: BlogsPage,
+      },
+      {
+        path: 'create',
+        component: CreatePage,
       },
       {
         path: 'create-post',

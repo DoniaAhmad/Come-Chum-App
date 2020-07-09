@@ -11,6 +11,7 @@ import { SideMenuPage } from '../side-menu/side-menu.page';
 import { GroupComponent } from 'src/app/components/group/group.component';
 import { ContestComponent } from 'src/app/components/contest/contest.component';
 import { EventComponent } from 'src/app/components/event/event.component';
+import { CreatePage } from '../create/create.page';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { EventComponent } from 'src/app/components/event/event.component';
     IonicModule,
     TabsPageRoutingModule,
   ],
-  declarations: [TabsPage, PostComponent, BlogComponent, HomePage, SideMenuPage, GroupComponent, EventComponent, ContestComponent]
+  declarations: [TabsPage, PostComponent, BlogComponent, HomePage, SideMenuPage,
+  GroupComponent, EventComponent, ContestComponent, CreatePage]
 })
 export class TabsPageModule {}

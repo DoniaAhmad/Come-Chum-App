@@ -20,7 +20,7 @@ export class TabsPage implements OnInit {
     router : 'events'
   }, {
     icon : 'add-circle-outline',
-    router : 'create-post'
+    router : 'create'
   }, {
     icon : 'reader-outline',
     router : 'blogs'

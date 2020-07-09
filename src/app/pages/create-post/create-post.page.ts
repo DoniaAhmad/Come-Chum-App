@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-create-post',
@@ -16,7 +17,8 @@ export class CreatePostPage implements OnInit {
   };
 
   constructor(
-    private imagePicker: ImagePicker
+    private imagePicker: ImagePicker,
+    public user: UserService
   ) { }
 
   ngOnInit() {
