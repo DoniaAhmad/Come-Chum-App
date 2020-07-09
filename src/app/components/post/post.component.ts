@@ -3,6 +3,9 @@ import { ActivatedRoute, NavigationExtras } from '@angular/router';
 import { FeedService } from 'src/app/services/feed.service';
 import { UserService } from 'src/app/services/user.service';
 import { NavController } from '@ionic/angular';
+import { MiscService } from 'src/app/services/misc.service';
+import { TranslateService } from '@ngx-translate/core';
+import { LocationsService } from 'src/app/services/locations.service';
 
 @Component({
   selector: 'app-post',
@@ -17,8 +20,12 @@ export class PostComponent implements OnInit {
     private route: ActivatedRoute,
     private feed: FeedService,
     private user: UserService,
-    private navCtrl: NavController
-  ) { }
+    private navCtrl: NavController,
+    public misc: MiscService,
+    public translate: TranslateService,
+    public locationsService: LocationsService
+  ) {
+  }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -26,6 +33,7 @@ export class PostComponent implements OnInit {
         this.post = JSON.parse(params['post']);
       }
     });
+    this.post.body = unescape(this.post.body);
   }
 
   toggleLike() {

@@ -15,6 +15,7 @@ import { FeedService } from './services/feed.service';
 import { GroupsService } from './services/groups.service';
 import { EventsService } from './services/events.service';
 import { ContestsService } from './services/contests.service';
+import { MiscService } from './services/misc.service';
 import { CommonModule } from '@angular/common';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
@@ -85,6 +86,7 @@ export function createTranslateLoader(http: HttpClient) {
     ImagePicker,
     Chooser,
     LocalNotifications,
+    MiscService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

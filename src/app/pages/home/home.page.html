@@ -17,7 +17,7 @@
     <ion-grid>
         <ion-row>
             <!-- search bar -->
-            <ion-searchbar class="search" placeholder="Search here ..">
+            <ion-searchbar class="search" placeholder="Search here .." [(ngModel)]="searchQuery" (keyup.enter)="search()">
                 <img class="advanced" src="../../../assets/imgs/advanced.png" (click)="advanced()" />
             </ion-searchbar>
             <!-- end search bar -->

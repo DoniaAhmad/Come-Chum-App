@@ -15,15 +15,25 @@ export class FeedService {
   }
 
   getMyFeed(userId, pageId) {
-    return this.httpClient.get(`${environment.api}feed/my/${userId}/${pageId}`);
+    return this.httpClient.get(`${environment.api}feed/user/${userId}/${pageId}`);
   }
 
   getFeed(userId, pageId) {
     return this.httpClient.get(`${environment.api}feed/all/${userId}/${pageId}`);
   }
 
-  search(userId, pageId, query) {
-    return this.httpClient.get(`${environment.api}feed/search/${userId}/${pageId}/${query}`);
+  search(text, pageId): any {
+    return this.httpClient.post(`${environment.api}feed/search`, {
+      text,
+      pageId
+    });
+  }
+
+  advancedSearch(data, pageId): any {
+    return this.httpClient.post(`${environment.api}feed/advancedSearch`, {
+      data,
+      pageId
+    });
   }
 
   getPost(userId, blogId) {

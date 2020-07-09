@@ -17,7 +17,9 @@ export class HomePage {
 
   public trendingBlogs = [];
   public feed = [];
+  public oldQuery = '';
   public searchQuery = '';
+  public oldData = {};
 
   private pageId = 1;
 
@@ -58,9 +60,13 @@ export class HomePage {
   }
 
   search() {
-    this.pageId = 1;
-    this.feedService.search(this.userService.getData()['id'], this.pageId, this.searchQuery).subscribe( data => {
-      this.feed = (data as Array<any>);
+    if (this.oldQuery !== this.searchQuery) {
+      this.oldQuery = this.searchQuery;
+      this.pageId = 1;
+      this.feed = [];
+    }
+    this.feedService.search(this.searchQuery, this.pageId).subscribe( data => {
+      this.feed = this.feed.concat(data as Array<any>);
       this.pageId++;
     });
   }
@@ -72,7 +78,20 @@ export class HomePage {
     });
     await modal.present();
     const { data } = await modal.onWillDismiss();
-    console.log(data);
+    console.log('advanced', data);
+    this.advancedSearch(data);
+  }
+
+  advancedSearch(data) {
+    if (this.oldData !== data) {
+      this.pageId = 1;
+      this.oldData = data;
+      this.feed = [];
+    }
+    this.feedService.advancedSearch(data, this.pageId).subscribe(data => {
+      this.feed = this.feed.concat(data as Array<any>);
+      this.pageId++;
+    });
   }
 
   toggleMenu() {
