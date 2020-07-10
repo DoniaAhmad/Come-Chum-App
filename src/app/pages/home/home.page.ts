@@ -79,7 +79,9 @@ export class HomePage {
     await modal.present();
     const { data } = await modal.onWillDismiss();
     console.log('advanced', data);
-    this.advancedSearch(data);
+    if (data !== undefined) {
+      this.advancedSearch(data);
+    }
   }
 
   advancedSearch(data) {
