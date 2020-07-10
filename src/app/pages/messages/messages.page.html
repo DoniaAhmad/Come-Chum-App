@@ -8,7 +8,8 @@
         <ion-col size="7" class="center">
           <span class="name">{{chat ? chat.name : ''}}</span>
           <br>
-          <span class="status">{{chat && chat.online ? 'Online Now' : 'Offline Now'}}</span>
+          <span class="status" *ngIf="chat && chat.online">{{'common.online' | translate}}</span>
+          <span class="status" *ngIf="chat && !chat.online">{{'common.offline' | translate}}</span>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -30,7 +31,7 @@
 </ion-content>
 
 <ion-footer>
-  <ion-input class="input" placeholder="Type your message" [(ngModel)]="text" (keyup.enter)="send()"></ion-input>
+  <ion-input class="input" placeholder="{{'common.type_here' | translate}}" [(ngModel)]="text" (keyup.enter)="send()"></ion-input>
   <ion-icon class="input-icon" name="camera-outline" (click)="uploadImage()"></ion-icon>
   <ion-icon class="input-icon icon2" name="mic-outline" (click)="uploadVoice()"></ion-icon>
 </ion-footer>

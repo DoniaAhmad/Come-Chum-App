@@ -3,7 +3,7 @@
 
   <ion-grid class="container">
     <ion-row>
-      <ion-col class="option" size="3" offset="3" style="margin-right: 3em;" (click)="create(0)">
+      <ion-col class="option" size="3" offset="3" [ngStyle]="{'margin-right': translate.currentLang == 'ar' ? '3em' : '0em'}"  (click)="create(0)">
         <i class="material-icons">edit</i>
         <p>{{'common.post' | translate}}</p>
       </ion-col>
@@ -13,7 +13,7 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col class="option" size="3" offset="3" style="margin-right: 3em;" (click)="create(2)">
+      <ion-col class="option" size="3" offset="3" [ngStyle]="{'margin-right': translate.currentLang == 'ar' ? '3em' : '0em'}" (click)="create(2)">
         <i class="material-icons">article</i>
         <p>{{'common.blog' | translate}}</p>
       </ion-col>

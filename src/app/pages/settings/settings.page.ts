@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-settings',
@@ -55,7 +56,9 @@ export class SettingsPage implements OnInit {
 
   constructor(
     private iab: InAppBrowser,
-    private router: Router) { }
+    private router: Router,
+    public translate: TranslateService,
+    ) { }
 
   ngOnInit() {
   }

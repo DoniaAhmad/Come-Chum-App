@@ -45,7 +45,11 @@
         "post":"Post",
         "blog":"Blog",
         "group":"Group",
-        "event":"Event"
+        "event":"Event",
+        "online" : "Online Now",
+        "offline" : "Offline Now",
+        "type_here" : "Type here ..",
+        "members" : "Members"
     },
     "info" : {
         "slide1_title" : "Search for the right place",
@@ -102,7 +106,8 @@
         "this_week" : "This week",
         "this_month" : "This month",
         "this_year": "This year",
-        "custom" : "Custom"
+        "custom" : "Custom",
+        "joined" : "Joined"
     },
     "send_message_to_you" : "sent a message to you"
 }

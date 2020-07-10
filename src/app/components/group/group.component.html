@@ -6,9 +6,9 @@
   <ion-grid>
     <ion-row>
       <ion-col size="6" class="ion-align-self-start">
-        <span>{{group.members}} members</span>
+        <span>{{group.members}} {{'common.members' | translate}}</span>
       </ion-col>
-      <ion-col size="6" class="ion-align-self-end right">
+      <ion-col size="6" class="ion-align-self-end" [ngClass]="{'right': translate.currentLang == 'ar', 'left': translate.currentLang == 'en'}">
         <ion-button shape="round">{{'common.view' | translate}}</ion-button>
       </ion-col>
     </ion-row>

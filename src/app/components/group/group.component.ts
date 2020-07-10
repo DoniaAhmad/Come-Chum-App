@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-group',
@@ -11,7 +12,8 @@ export class GroupComponent implements OnInit {
   @Input() group;
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public translate: TranslateService
   ) { }
 
   ngOnInit() {

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-event',
@@ -11,7 +12,8 @@ export class EventComponent implements OnInit {
   @Input() event;
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public translate: TranslateService
   ) { }
 
   ngOnInit() {

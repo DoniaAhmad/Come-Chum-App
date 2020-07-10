@@ -7,13 +7,13 @@
     <ion-row>
       <ion-col size="8" class="ion-align-self-start">
         <div class="container">
-          <span class="joined">{{event.members}} Joined</span>
+          <span class="joined">{{event.members}} {{'events.joined' | translate}}</span>
           <br>
           <p class="desc">{{event.about}}
           </p>
         </div>
       </ion-col>
-      <ion-col size="4" class="ion-align-self-end right">
+      <ion-col size="4" class="ion-align-self-end" [ngClass]="{'left': translate.currentLang == 'ar', 'right': translate.currentLang == 'en'}">
         <ion-button shape="round">{{'common.view' | translate}}</ion-button>
       </ion-col>
     </ion-row>

@@ -1,9 +1,9 @@
-<ion-content>
+<ion-content [ngStyle]="{'direction': translate.currentLang == 'ar' ? 'rtl' : 'ltr'}">
   <h1 class="title">{{"common.settings" | translate}}</h1>
   <ion-list>
     <ion-item *ngFor="let item of items; let i = index" [ngClass]="{'header': item.type == 'title'}" (click)="navigate(i)">
       <p>{{item.title | translate}}</p>
-      <ion-icon *ngIf="item.type == 'subtitle'" name="play-sharp"></ion-icon>
+      <ion-icon *ngIf="item.type == 'subtitle'" name="play-sharp" [ngStyle]="{'left': translate.currentLang == 'ar' ? '1em' : 'unset', 'right': translate.currentLang == 'ar' ? 'unset' : '1em'}"></ion-icon>
     </ion-item>
   </ion-list>
 </ion-content>
