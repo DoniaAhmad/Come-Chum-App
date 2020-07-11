@@ -8,7 +8,7 @@
       <ion-col size="6" class="ion-align-self-start">
         <span>{{group.members}} {{'common.members' | translate}}</span>
       </ion-col>
-      <ion-col size="6" class="ion-align-self-end" [ngClass]="{'right': translate.currentLang == 'ar', 'left': translate.currentLang == 'en'}">
+      <ion-col size="6" class="ion-align-self-end" [ngClass]="{'right': translate.currentLang == 'en', 'left': translate.currentLang == 'ar'}">
         <ion-button shape="round">{{'common.view' | translate}}</ion-button>
       </ion-col>
     </ion-row>

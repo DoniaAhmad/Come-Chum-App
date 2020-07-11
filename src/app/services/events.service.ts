@@ -25,4 +25,11 @@ export class EventsService {
   getEvent(eventId) {
     return this.httpClient.get(`${environment.api}events/event/${eventId}`);
   }
+
+  search(pageId, type, date) {
+    return this.httpClient.post(`${environment.api}events/search`,
+    {
+      pageId, type, date
+    });
+  }
 }

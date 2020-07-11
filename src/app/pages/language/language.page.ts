@@ -10,7 +10,7 @@ import { NavController } from '@ionic/angular';
 export class LanguagePage implements OnInit {
 
   constructor(
-    private translate: TranslateService,
+    public translate: TranslateService,
     private navController: NavController) { }
 
   ngOnInit() {

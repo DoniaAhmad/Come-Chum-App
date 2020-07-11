@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-change-password',
@@ -11,7 +12,9 @@ export class ChangePasswordPage implements OnInit {
   public newPassword = '';
   public rePassword = '';
 
-  constructor() { }
+  constructor(
+    public translate: TranslateService
+  ) { }
 
   ngOnInit() {
   }

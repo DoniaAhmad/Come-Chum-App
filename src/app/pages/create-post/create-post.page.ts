@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { UserService } from 'src/app/services/user.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-create-post',
@@ -18,7 +19,8 @@ export class CreatePostPage implements OnInit {
 
   constructor(
     private imagePicker: ImagePicker,
-    public user: UserService
+    public user: UserService,
+    public translate: TranslateService
   ) { }
 
   ngOnInit() {

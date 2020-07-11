@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content [ngStyle]="{'direction': translate.currentLang == 'ar' ? 'rtl' : 'ltr'}">
   <h1 class="title">{{"create_post.title" | translate}}</h1>
 
   <ion-grid>
