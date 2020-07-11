@@ -11,7 +11,7 @@ export class FeedService {
 
   create(data) {
     return this.httpClient.post(`${environment.api}feed/create`,
-    data);
+    {data : data});
   }
 
   getMyFeed(userId, pageId) {

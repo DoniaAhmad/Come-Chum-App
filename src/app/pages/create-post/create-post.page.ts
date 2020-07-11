@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { UserService } from 'src/app/services/user.service';
 import { TranslateService } from '@ngx-translate/core';
+import { FeedService } from 'src/app/services/feed.service';
+import { ModalSearchPage } from '../modal-search/modal-search.page';
+import { ModalController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-create-post',
@@ -11,6 +14,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class CreatePostPage implements OnInit {
 
   public images = [];
+  public text = '';
 
   public slideOpts = {
     slidesPerView: 1,
@@ -20,7 +24,10 @@ export class CreatePostPage implements OnInit {
   constructor(
     private imagePicker: ImagePicker,
     public user: UserService,
-    public translate: TranslateService
+    public translate: TranslateService,
+    private feed: FeedService,
+    private modalController: ModalController,
+    private navctrl: NavController
   ) { }
 
   ngOnInit() {
@@ -42,8 +49,30 @@ export class CreatePostPage implements OnInit {
     }
   }
 
-  create() {
-
+  async create() {
+    if (this.text !== '' || this.images.length > 0) {
+      let apiBody = {};
+      apiBody['user_id'] = this.user.getData()['id'];
+      if (this.text !== '') {
+        apiBody['body'] = this.text;
+      }
+      if (this.images.length > 0) {
+        apiBody['images'] = this.images;
+      }
+      const modal = await this.modalController.create({
+        component: ModalSearchPage,
+        swipeToClose: true,
+      });
+      await modal.present();
+      const { data } = await modal.onWillDismiss();
+      console.log('advanced', data);
+      apiBody = Object.assign(apiBody, data);
+      console.log(apiBody);
+      this.feed.create(apiBody).subscribe( data => {
+        console.log(data);
+        this.navctrl.pop();
+      });
+    }
   }
 
 }

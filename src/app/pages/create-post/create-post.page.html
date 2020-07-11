@@ -23,7 +23,7 @@
     </ion-slide>
   </ion-slides>
 
-  <ion-textarea rows="10" placeholder="{{'create_post.type_post' | translate}}"></ion-textarea>
+  <ion-textarea rows="10" placeholder="{{'create_post.type_post' | translate}}" [(ngModel)]="text"></ion-textarea>
 
-  <ion-button>{{"common.create" | translate}}</ion-button>
+  <ion-button (click)="create()">{{"common.create" | translate}}</ion-button>
 </ion-content>
